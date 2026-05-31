@@ -1,0 +1,753 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>포트폴리오 | 카이앤컴퍼니 (KAI COMPANY)</title>
+  <meta name="description" content="카이앤컴퍼니가 진행한 마케팅·디자인·영상 캠페인 포트폴리오. 기순도, 하모아, 미친특가, 리바스 등 결과로 증명한 프로젝트." />
+  <meta name="theme-color" content="#0c0c14" />
+
+  <meta property="og:title" content="포트폴리오 | 카이앤컴퍼니" />
+  <meta property="og:description" content="결과로 증명한 카이앤컴퍼니의 캠페인 포트폴리오." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="assets/logo.png" />
+
+  <link rel="icon" type="image/png" href="assets/logo.png" />
+
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <a class="sr-only" href="#work-list">본문으로 건너뛰기</a>
+
+  <!-- ============================================================
+       헤더 / 네비게이션 (고정) — 메인으로 앵커 이동
+       ============================================================ -->
+  <header class="header is-scrolled" data-header>
+    <div class="container header__inner">
+      <a class="brand" href="index.html" aria-label="카이앤컴퍼니 홈">
+        <img class="brand__logo" src="assets/logo.png" alt="카이앤컴퍼니 로고" />
+        <span class="brand__name">KAI&nbsp;COMPANY</span>
+      </a>
+
+      <nav class="nav" id="primary-nav" data-nav aria-label="주요 메뉴">
+        <a class="nav__link" href="index.html#home">HOME</a>
+        <a class="nav__link" href="index.html#about">ABOUT</a>
+        <a class="nav__link" href="index.html#services">OUR SERVICE</a>
+        <a class="nav__link" href="work.html">WORK</a>
+        <a class="nav__link nav__link--cta" href="index.html#contact">CONTACT</a>
+      </nav>
+
+      <button class="nav-toggle" data-nav-toggle aria-label="메뉴 열기/닫기"
+              aria-expanded="false" aria-controls="primary-nav">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <!-- ============================================================
+         페이지 히어로
+         ============================================================ -->
+    <section class="page-hero" aria-labelledby="page-title">
+      <div class="hero__bg" aria-hidden="true"></div>
+      <div class="container page-hero__inner">
+        <nav class="breadcrumb" aria-label="브레드크럼">
+          <a href="index.html">HOME</a> · <span aria-current="page">WORK</span>
+        </nav>
+        <h1 id="page-title">결과로 증명한 <span class="text-gradient">포트폴리오</span></h1>
+        <p>카이앤컴퍼니가 함께한 브랜드의 마케팅, 디자인, 영상 캠페인. 카드를 클릭하면 영상·모션 콘텐츠를 확인할 수 있습니다.</p>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         포트폴리오 리스트 (필터 + 그리드)
+         ============================================================ -->
+    <section class="section" id="work-list" aria-label="포트폴리오 목록">
+      <div class="container">
+        <!-- ============================================================
+             브랜드별 캠페인 상세 — 포트폴리오 본 콘텐츠
+             ============================================================ -->
+        <style>
+          /* ============= brand-detail (전문가 리디자인) ============= */
+          .brand-detail { margin-top: clamp(3rem, 6vw, 5rem); }
+
+          /* 타이틀 블록 — eyebrow + 큰 헤딩 + divider + 서브카피 */
+          .bd-header { text-align: center; margin-bottom: clamp(2.4rem, 5vw, 3.6rem); }
+          .bd-header__eyebrow { display: inline-flex; align-items: center; gap: .45rem; font-size: .78rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: #6d28d9; background: #f3e8ff; padding: .4rem .9rem; border-radius: 999px; margin-bottom: 1rem; }
+          .bd-header__eyebrow::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: #6d28d9; }
+          .bd-header__title { font-size: clamp(1.8rem, 4vw, 2.6rem); font-weight: 800; letter-spacing: -0.02em; margin: 0 0 .8rem; color: #0c0c14; line-height: 1.2; }
+          .bd-header__divider { width: 56px; height: 3px; background: linear-gradient(90deg, #6d28d9, #ec4899); border-radius: 2px; margin: 0 auto 1rem; }
+          .bd-header__lead { color: #475569; font-size: clamp(.95rem, 1.4vw, 1.05rem); max-width: 580px; margin: 0 auto; line-height: 1.6; }
+
+          /* 브랜드 카드 — 흰색 + 차분한 보더 + 좌측 컬러 라인 */
+          .brand-section { position: relative; background: #ffffff; border-radius: 16px; padding: clamp(1.6rem, 3vw, 2.4rem); margin-bottom: clamp(1.4rem, 3vw, 2rem); color: #0c0c14; border: 1px solid #e2e8f0; box-shadow: 0 1px 3px rgba(15, 23, 42, .04); overflow: hidden; }
+          .brand-section::before { content: ""; position: absolute; top: 0; left: 0; width: 4px; height: 100%; background: linear-gradient(180deg, #6d28d9, #ec4899); }
+          .brand-section__head { display: flex; align-items: center; gap: .8rem; flex-wrap: wrap; margin-bottom: 1.4rem; padding-bottom: 1.1rem; border-bottom: 1px solid #f1f5f9; }
+          .brand-section__head h3 { font-size: clamp(1.25rem, 2.4vw, 1.6rem); margin: 0; font-weight: 800; letter-spacing: -0.01em; color: #0c0c14; }
+          .brand-section__head .tag { font-size: .78rem; color: #6d28d9; font-weight: 700; padding: .3rem .7rem; background: #f3e8ff; border-radius: 6px; letter-spacing: .01em; }
+
+          /* Meta 광고 클러스터 */
+          .meta-campaign { margin-top: 1.6rem; }
+          .meta-campaign__title { display: flex; align-items: center; gap: .55rem; font-size: .92rem; font-weight: 700; color: #1e293b; margin: 0 0 1rem; text-transform: uppercase; letter-spacing: .08em; }
+          .meta-campaign__title::before { content: ""; width: 14px; height: 14px; border-radius: 3px; background: linear-gradient(135deg, #6d28d9, #ec4899); }
+          .subcampaign { margin: 1.2rem 0 2rem; }
+          .subcampaign__title { font-size: .9rem; color: #475569; margin: 0 0 .9rem; font-weight: 600; padding-left: .7rem; border-left: 3px solid #cbd5e1; }
+
+          /* 이미지 그리드 */
+          .img-grid { display: grid; gap: .7rem; }
+          .img-grid--square, .img-grid--portrait, .img-grid--mixed { grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); }
+          .img-grid__item { position: relative; border-radius: 10px; overflow: hidden; background: #f1f5f9; aspect-ratio: 1/1; box-shadow: 0 1px 4px rgba(15, 23, 42, .06); transition: transform .25s, box-shadow .25s; }
+          .img-grid__item:hover { transform: translateY(-2px); box-shadow: 0 6px 16px rgba(15, 23, 42, .12); }
+          .img-grid--portrait .img-grid__item, .img-grid--mixed .img-grid__item.is-portrait { aspect-ratio: 9/16; }
+          .img-grid__item img, .img-grid__item video { width: 100%; height: 100%; object-fit: cover; display: block; }
+          .img-grid__item .badge { position: absolute; top: 8px; left: 8px; background: rgba(12,12,20,.85); color: #fff; font-size: .65rem; padding: 3px 7px; border-radius: 4px; letter-spacing: .04em; font-weight: 600; backdrop-filter: blur(4px); }
+
+          /* ============= Bento 5-image 레이아웃 (Featured + 4) ============= */
+          .img-grid--bento5 {
+            display: grid;
+            gap: .8rem;
+            grid-template-columns: 1fr;
+          }
+          /* 태블릿: 2열 (featured 2x1) */
+          @media (min-width: 640px) {
+            .img-grid--bento5 { grid-template-columns: repeat(2, 1fr); grid-auto-rows: 1fr; }
+            .img-grid--bento5 .is-featured { grid-column: span 2; aspect-ratio: 2/1; }
+          }
+          /* 데스크톱: 4열 — featured 2x2 + 3개 + 세로 1개가 우측 컬럼 풀높이 */
+          @media (min-width: 1024px) {
+            .img-grid--bento5 {
+              grid-template-columns: repeat(4, 1fr);
+              grid-template-rows: repeat(2, 1fr);
+            }
+            .img-grid--bento5 .is-featured {
+              grid-column: span 2; grid-row: span 2;
+              aspect-ratio: 1/1;
+            }
+            .img-grid--bento5 > :not(.is-featured):not(.is-portrait) {
+              aspect-ratio: 1/1;
+            }
+            /* 세로 이미지: 오른쪽 끝 컬럼에서 2행 차지 */
+            .img-grid--bento5 .is-portrait {
+              grid-column: 4; grid-row: 1 / span 2;
+              aspect-ratio: auto;
+            }
+          }
+          .img-grid--bento5 .is-featured { position: relative; }
+          .img-grid--bento5 .is-featured .badge {
+            background: linear-gradient(135deg, #6d28d9, #ec4899);
+            font-size: .68rem; letter-spacing: .12em;
+          }
+
+          /* 비디오 그리드 — 썸네일 포함 */
+          .video-grid { display: grid; gap: .8rem; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); }
+          .video-grid > div { position: relative; }
+          .video-grid video { width: 100%; aspect-ratio: 9/16; object-fit: cover; border-radius: 10px; background: #0f172a; box-shadow: 0 2px 8px rgba(15, 23, 42, .12); transition: transform .25s, box-shadow .25s; cursor: pointer; }
+          .video-grid > div:hover video { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(15, 23, 42, .2); }
+          .video-grid__caption { display: block; text-align: center; font-size: .82rem; margin-top: .4rem; color: #475569; font-weight: 600; }
+
+          /* 더보기 토글 (details/summary) */
+          .more-videos { margin-top: 1.2rem; text-align: center; }
+          .more-videos > summary { list-style: none; cursor: pointer; display: inline-flex; align-items: center; gap: .35rem; padding: .6rem 1.3rem; border-radius: 999px; background: #fff; border: 1px solid #cbd5e1; color: #475569; font-size: .85rem; font-weight: 700; transition: background .2s, border-color .2s, color .2s, transform .15s; }
+          .more-videos > summary::-webkit-details-marker { display: none; }
+          .more-videos > summary:hover { background: #f3e8ff; border-color: #c4b5fd; color: #6d28d9; transform: translateY(-1px); }
+          .more-videos .more-videos__less { display: none; }
+          .more-videos[open] .more-videos__more { display: none; }
+          .more-videos[open] .more-videos__less { display: inline; }
+
+          /* 쇼핑몰 카드 (브랜드 섹션 안) */
+          .mall-grid { display: grid; gap: 1rem; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); }
+          .mall-card { display: flex; flex-direction: column; background: #fff; border-radius: 12px; overflow: hidden; box-shadow: 0 1px 4px rgba(15, 23, 42, .06); border: 1px solid #e2e8f0; text-decoration: none; color: inherit; transition: transform .2s, box-shadow .2s, border-color .2s; }
+          .mall-card:hover { transform: translateY(-3px); box-shadow: 0 8px 20px rgba(15, 23, 42, .12); border-color: #c4b5fd; }
+          .mall-card__media { aspect-ratio: 2/1; background: #f8fafc; display: flex; align-items: center; justify-content: center; padding: .7rem; }
+          .mall-card__media img { width: 100%; height: 100%; object-fit: cover; border-radius: 6px; }
+          .mall-card__info { padding: .9rem 1rem 1.1rem; }
+          .mall-card__tag { display: inline-block; font-size: .68rem; font-weight: 700; padding: 2px 8px; border-radius: 4px; background: #f3e8ff; color: #6d28d9; margin-bottom: .45rem; letter-spacing: .02em; }
+          .mall-card__name { font-size: .95rem; font-weight: 700; margin: 0 0 .25rem; color: #0c0c14; }
+          .mall-card__desc { font-size: .78rem; color: #64748b; margin: 0; }
+          .mall-meta { display: flex; flex-wrap: wrap; gap: .6rem 1.6rem; margin: .8rem 0 1.4rem; font-size: .85rem; color: #475569; }
+          .mall-meta strong { color: #0c0c14; font-weight: 700; }
+
+          /* ============= 모바일 최적화 (≤ 640px) ============= */
+          @media (max-width: 640px) {
+            .brand-detail { margin-top: clamp(2rem, 5vw, 3rem); }
+            .bd-header { margin-bottom: 2rem; }
+            .bd-header__eyebrow { font-size: .7rem; padding: .35rem .8rem; }
+            .bd-header__title { font-size: 1.65rem; line-height: 1.25; }
+            .bd-header__lead { font-size: .9rem; padding: 0 .8rem; }
+
+            .brand-section { padding: 1.2rem; border-radius: 14px; margin-bottom: 1.2rem; }
+            .brand-section::before { width: 3px; }
+            .brand-section__head { gap: .5rem; padding-bottom: .9rem; margin-bottom: 1rem; }
+            .brand-section__head h3 { font-size: 1.15rem; }
+            .brand-section__head .tag { font-size: .72rem; padding: .25rem .6rem; }
+
+            .meta-campaign__title { font-size: .82rem; letter-spacing: .04em; }
+            .subcampaign__title { font-size: .85rem; padding-left: .55rem; }
+
+            /* 이미지 그리드: 모바일에서 2열 고정 (가독성 우선) */
+            .img-grid--square, .img-grid--portrait, .img-grid--mixed {
+              grid-template-columns: repeat(2, 1fr);
+              gap: .5rem;
+            }
+
+            /* 비디오 그리드: 모바일 2열 (1열은 9/16 비율이 너무 김) */
+            .video-grid {
+              grid-template-columns: repeat(2, 1fr);
+              gap: .6rem;
+            }
+            .video-grid__caption { font-size: .75rem; margin-top: .3rem; }
+
+            /* 쇼핑몰 카드: 모바일 2열 */
+            .mall-grid { grid-template-columns: repeat(2, 1fr); gap: .7rem; }
+            .mall-card__media { aspect-ratio: 5/3; padding: .5rem; }
+            .mall-card__info { padding: .7rem .8rem .85rem; }
+            .mall-card__name { font-size: .88rem; }
+            .mall-card__desc { font-size: .7rem; }
+            .mall-meta { flex-direction: column; gap: .35rem; font-size: .8rem; }
+
+            /* 더보기 토글: 풀폭 버튼 */
+            .more-videos > summary { width: 100%; justify-content: center; padding: .65rem 1rem; }
+
+            /* 클라이언트 카드 (cgrid): 모바일 1열 */
+            .cgrid { grid-template-columns: 1fr; gap: .8rem; }
+            .ccard__head { padding: .85rem 1rem .95rem; }
+            .ccard__body { padding: .8rem 1rem 1rem; }
+
+            /* 클라이언트 필터: 가로 스크롤 허용으로 잘림 방지 */
+            .cfilter { flex-wrap: nowrap; overflow-x: auto; justify-content: flex-start; padding-bottom: .4rem; scrollbar-width: thin; -webkit-overflow-scrolling: touch; }
+            .cfilter button { flex-shrink: 0; padding: .45rem .9rem; font-size: .8rem; }
+          }
+
+          /* ============= 초소형 화면 (≤ 380px) ============= */
+          @media (max-width: 380px) {
+            .img-grid--square, .img-grid--portrait, .img-grid--mixed { grid-template-columns: repeat(2, 1fr); }
+            .video-grid { grid-template-columns: 1fr; }
+            .mall-grid { grid-template-columns: 1fr; }
+            .mall-card__media { aspect-ratio: 2/1; }
+            .bd-header__title { font-size: 1.45rem; }
+          }
+        </style>
+
+        <section class="brand-detail reveal" aria-label="브랜드별 캠페인 상세">
+          <header class="bd-header">
+            <span class="bd-header__eyebrow">Case Study</span>
+            <h2 class="bd-header__title">실제 캠페인 <span class="text-gradient">상세</span></h2>
+            <div class="bd-header__divider"></div>
+            <p class="bd-header__lead">기순도 · 하모아 · 미친특가 · 리바스 — 카이앤컴퍼니가 직접 기획·운영한 캠페인의 실제 산출물을 확인하세요.</p>
+          </header>
+
+          <!-- 기순도 -->
+          <article class="brand-section">
+            <header class="brand-section__head">
+              <h3>기순도</h3>
+              <span class="tag">식품 · 메타광고 / 카드뉴스</span>
+            </header>
+
+            <div class="meta-campaign">
+              <h4 class="meta-campaign__title">Meta 광고 소재 제작 (1개 캠페인)</h4>
+
+              <!-- 설 이벤트 -->
+              <div class="subcampaign">
+                <h5 class="subcampaign__title">설 이벤트 캠페인 (이미지 4종 · 정사각형 3 + 세로 1)</h5>
+                <div class="img-grid img-grid--bento5">
+                  <div class="img-grid__item is-featured"><img src="assets/images/gisundo/1080×1080-1.png" alt="설 이벤트 메인 비주얼" loading="lazy" /><span class="badge">FEATURED</span></div>
+                  <div class="img-grid__item"><img src="assets/images/gisundo/1080×1080-2.png" alt="설 이벤트 이미지 2" loading="lazy" /></div>
+                  <div class="img-grid__item"><img src="assets/images/gisundo/1080×1080-3.png" alt="설 이벤트 이미지 3" loading="lazy" /></div>
+                  <div class="img-grid__item is-portrait"><img src="assets/images/gisundo/1080×1920-2.png" alt="설 이벤트 세로 비주얼" loading="lazy" /></div>
+                </div>
+              </div>
+
+            </div>
+          </article>
+
+          <!-- 하모아 -->
+          <article class="brand-section">
+            <header class="brand-section__head">
+              <h3>하모아</h3>
+              <span class="tag">상세페이지 디자인 · 모션</span>
+            </header>
+            <div class="subcampaign">
+              <h5 class="subcampaign__title">상세페이지 비주얼 (이미지 4종 + 모션 1종)</h5>
+              <div class="img-grid img-grid--square">
+                <div class="img-grid__item"><img src="assets/images/hamoa/(정)-2.png" alt="하모아 정 2" loading="lazy" /></div>
+                <div class="img-grid__item"><img src="assets/images/hamoa/(정)-4.png" alt="하모아 정 4" loading="lazy" /></div>
+                <div class="img-grid__item"><img src="assets/images/hamoa/(세)-1.png" alt="하모아 세 1" loading="lazy" /></div>
+                <div class="img-grid__item"><img src="assets/images/hamoa/(세)-2.png" alt="하모아 세 2" loading="lazy" /></div>
+                <div class="img-grid__item"><img src="assets/images/hamoa/(세)-3.gif" alt="하모아 세 3 모션" loading="lazy" /><span class="badge">GIF</span></div>
+              </div>
+            </div>
+          </article>
+
+          <!-- 미친특가 -->
+          <article class="brand-section">
+            <header class="brand-section__head">
+              <h3>미친특가</h3>
+              <span class="tag">전국 지역 타겟 영상광고 (23개 지역 영상)</span>
+            </header>
+            <div class="subcampaign">
+              <h5 class="subcampaign__title">지역별 영상광고 (23편 · 11개 지역)</h5>
+              <!-- 대표 6개 노출 -->
+              <div class="video-grid">
+                <div><video src="assets/images/michinteukga/영상-서울.mp4" poster="assets/images/michinteukga/thumbs/영상-서울.jpg" preload="none" controls playsinline></video><span class="video-grid__caption">서울</span></div>
+                <div><video src="assets/images/michinteukga/영상-분당.mp4" poster="assets/images/michinteukga/thumbs/영상-분당.jpg" preload="none" controls playsinline></video><span class="video-grid__caption">분당</span></div>
+                <div><video src="assets/images/michinteukga/영상-성남.mp4" poster="assets/images/michinteukga/thumbs/영상-성남.jpg" preload="none" controls playsinline></video><span class="video-grid__caption">성남</span></div>
+                <div><video src="assets/images/michinteukga/영상-인천-1.mp4" poster="assets/images/michinteukga/thumbs/영상-인천-1.jpg" preload="none" controls playsinline></video><span class="video-grid__caption">인천 1</span></div>
+                <div><video src="assets/images/michinteukga/영상-대전.mp4" poster="assets/images/michinteukga/thumbs/영상-대전.jpg" preload="none" controls playsinline></video><span class="video-grid__caption">대전</span></div>
+                <div><video src="assets/images/michinteukga/영상-광주.mp4" poster="assets/images/michinteukga/thumbs/영상-광주.jpg" preload="none" controls playsinline></video><span class="video-grid__caption">광주</span></div>
+              </div>
+              <!-- 나머지 17개 더보기 (details/summary 토글) -->
+              <details class="more-videos">
+                <summary><span class="more-videos__more">+ 나머지 17개 지역 영상 더보기</span><span class="more-videos__less">− 접기</span></summary>
+                <div class="video-grid" style="margin-top: .8rem;">
+                  <div><video src="assets/images/michinteukga/영상-인천-2.mp4" poster="assets/images/michinteukga/thumbs/영상-인천-2.jpg" preload="none" controls playsinline></video><span class="video-grid__caption">인천 2</span></div>
+                  <div><video src="assets/images/michinteukga/영상-인천-3.mp4" poster="assets/images/michinteukga/thumbs/영상-인천-3.jpg" preload="none" controls playsinline></video><span class="video-grid__caption">인천 3</span></div>
+                  <div><video src="assets/images/michinteukga/영상-대전-1.mp4" poster="assets/images/michinteukga/thumbs/영상-대전-1.jpg" preload="none" controls playsinline></video><span class="video-grid__caption">대전 1</span></div>
+                  <div><video src="assets/images/michinteukga/영상-대전-2.mp4" poster="assets/images/michinteukga/thumbs/영상-대전-2.jpg" preload="none" controls playsinline></video><span class="video-grid__caption">대전 2</span></div>
+                  <div><video src="assets/images/michinteukga/영상-대구.mp4" poster="assets/images/michinteukga/thumbs/영상-대구.jpg" preload="none" controls playsinline></video><span class="video-grid__caption">대구</span></div>
+                  <div><video src="assets/images/michinteukga/영상-부산.mp4" poster="assets/images/michinteukga/thumbs/영상-부산.jpg" preload="none" controls playsinline></video><span class="video-grid__caption">부산</span></div>
+                  <div><video src="assets/images/michinteukga/영상-부산-1.mp4" poster="assets/images/michinteukga/thumbs/영상-부산-1.jpg" preload="none" controls playsinline></video><span class="video-grid__caption">부산 1</span></div>
+                  <div><video src="assets/images/michinteukga/영상-부산-2.mp4" poster="assets/images/michinteukga/thumbs/영상-부산-2.jpg" preload="none" controls playsinline></video><span class="video-grid__caption">부산 2</span></div>
+                  <div><video src="assets/images/michinteukga/영상-울산-1.mp4" poster="assets/images/michinteukga/thumbs/영상-울산-1.jpg" preload="none" controls playsinline></video><span class="video-grid__caption">울산 1</span></div>
+                  <div><video src="assets/images/michinteukga/영상-울산-2.mp4" poster="assets/images/michinteukga/thumbs/영상-울산-2.jpg" preload="none" controls playsinline></video><span class="video-grid__caption">울산 2</span></div>
+                  <div><video src="assets/images/michinteukga/영상-울산-3.mp4" poster="assets/images/michinteukga/thumbs/영상-울산-3.jpg" preload="none" controls playsinline></video><span class="video-grid__caption">울산 3</span></div>
+                  <div><video src="assets/images/michinteukga/영상-창원-1.mp4" poster="assets/images/michinteukga/thumbs/영상-창원-1.jpg" preload="none" controls playsinline></video><span class="video-grid__caption">창원 1</span></div>
+                  <div><video src="assets/images/michinteukga/영상-창원-2.mp4" poster="assets/images/michinteukga/thumbs/영상-창원-2.jpg" preload="none" controls playsinline></video><span class="video-grid__caption">창원 2</span></div>
+                  <div><video src="assets/images/michinteukga/영상-창원-3.mp4" poster="assets/images/michinteukga/thumbs/영상-창원-3.jpg" preload="none" controls playsinline></video><span class="video-grid__caption">창원 3</span></div>
+                  <div><video src="assets/images/michinteukga/영상-여수-1.mp4" poster="assets/images/michinteukga/thumbs/영상-여수-1.jpg" preload="none" controls playsinline></video><span class="video-grid__caption">여수 1</span></div>
+                  <div><video src="assets/images/michinteukga/영상-여수-2.mp4" poster="assets/images/michinteukga/thumbs/영상-여수-2.jpg" preload="none" controls playsinline></video><span class="video-grid__caption">여수 2</span></div>
+                  <div><video src="assets/images/michinteukga/영상-여수-3.mp4" poster="assets/images/michinteukga/thumbs/영상-여수-3.jpg" preload="none" controls playsinline></video><span class="video-grid__caption">여수 3</span></div>
+                </div>
+              </details>
+            </div>
+          </article>
+
+          <!-- 쇼핑몰 구축 -->
+          <article class="brand-section">
+            <header class="brand-section__head">
+              <h3>쇼핑몰 구축</h3>
+              <span class="tag">기획 · 디자인 · 개발 원스톱 구축</span>
+            </header>
+            <div class="mall-meta">
+              <span>플랫폼: <strong>카페24 · 플렉스게이트</strong></span>
+              <span>구축 실적: <strong>8건</strong></span>
+              <span>구축 기간: <strong>평균 4주</strong></span>
+              <span>범위: <strong>UI/UX · 결제 · 물류 연동</strong></span>
+            </div>
+            <div class="subcampaign">
+              <h5 class="subcampaign__title">구축·운영 중 쇼핑몰 (8개사)</h5>
+              <div class="mall-grid">
+                <a href="https://www.ksdo.co.kr/" target="_blank" rel="noopener" class="mall-card">
+                  <div class="mall-card__media"><img src="assets/malls/ksdo.jpg" alt="기순도전통장 로고" loading="lazy" /></div>
+                  <div class="mall-card__info">
+                    <span class="mall-card__tag">식품</span>
+                    <h6 class="mall-card__name">기순도전통장 쇼핑몰</h6>
+                    <p class="mall-card__desc">대한민국 식품명인 제35호</p>
+                  </div>
+                </a>
+                <div class="mall-card mall-card--placeholder" aria-label="독점마켓">
+                  <div class="mall-card__media" style="background:linear-gradient(135deg,#10b981,#0d9488);color:#fff;font-size:1.3rem;font-weight:800;letter-spacing:-.01em;">독점마켓</div>
+                  <div class="mall-card__info">
+                    <span class="mall-card__tag">이커머스</span>
+                    <h6 class="mall-card__name">독점마켓</h6>
+                    <p class="mall-card__desc">종합 이커머스 플랫폼</p>
+                  </div>
+                </div>
+                <a href="https://www.chungdam-market.com/" target="_blank" rel="noopener" class="mall-card">
+                  <div class="mall-card__media"><img src="assets/malls/chungdam.jpg" alt="청담마켓 로고" loading="lazy" /></div>
+                  <div class="mall-card__info">
+                    <span class="mall-card__tag">식품</span>
+                    <h6 class="mall-card__name">청담마켓 쇼핑몰</h6>
+                    <p class="mall-card__desc">농수축산물 프리미엄 쇼핑몰</p>
+                  </div>
+                </a>
+                <a href="https://www.hamoa.co.kr/" target="_blank" rel="noopener" class="mall-card">
+                  <div class="mall-card__media"><img src="assets/malls/hamoa_mall.png" alt="하모아 로고" loading="lazy" /></div>
+                  <div class="mall-card__info">
+                    <span class="mall-card__tag">기타</span>
+                    <h6 class="mall-card__name">하모아 쇼핑몰</h6>
+                    <p class="mall-card__desc">하모아 공식 쇼핑몰</p>
+                  </div>
+                </a>
+                <a href="https://heyjude1009.flexg.shop/" target="_blank" rel="noopener" class="mall-card">
+                  <div class="mall-card__media"><img src="assets/malls/heyjude.png" alt="헤이쥬드 로고" loading="lazy" /></div>
+                  <div class="mall-card__info">
+                    <span class="mall-card__tag">기타</span>
+                    <h6 class="mall-card__name">헤이쥬드 쇼핑몰</h6>
+                    <p class="mall-card__desc">헤이쥬드 공식 쇼핑몰</p>
+                  </div>
+                </a>
+                <a href="https://samjunginst.flexg.shop/" target="_blank" rel="noopener" class="mall-card">
+                  <div class="mall-card__media"><img src="assets/malls/voltmoon.png" alt="볼트문 로고" loading="lazy" /></div>
+                  <div class="mall-card__info">
+                    <span class="mall-card__tag">기타</span>
+                    <h6 class="mall-card__name">볼트문 쇼핑몰</h6>
+                    <p class="mall-card__desc">LED 인테리어 조명</p>
+                  </div>
+                </a>
+                <a href="https://www.dokjeom.com/" target="_blank" rel="noopener" class="mall-card">
+                  <div class="mall-card__media"><img src="assets/malls/nenom.png" alt="네놈마켓 로고" loading="lazy" /></div>
+                  <div class="mall-card__info">
+                    <span class="mall-card__tag">식품</span>
+                    <h6 class="mall-card__name">네놈마켓 쇼핑몰</h6>
+                    <p class="mall-card__desc">식품 종합 쇼핑몰</p>
+                  </div>
+                </a>
+                <a href="https://matgwadang.co.kr/" target="_blank" rel="noopener" class="mall-card">
+                  <div class="mall-card__media"><img src="assets/malls/matgwadang.jpg" alt="맛과당 로고" loading="lazy" /></div>
+                  <div class="mall-card__info">
+                    <span class="mall-card__tag">식품</span>
+                    <h6 class="mall-card__name">맛과당 쇼핑몰</h6>
+                    <p class="mall-card__desc">프리미엄 농수산물</p>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- 리바스 -->
+          <article class="brand-section">
+            <header class="brand-section__head">
+              <h3>리바스</h3>
+              <span class="tag">브랜드 상세페이지 · 영상</span>
+            </header>
+            <div class="subcampaign">
+              <h5 class="subcampaign__title">상세페이지 (이미지 5종)</h5>
+              <div class="img-grid img-grid--square">
+                <div class="img-grid__item"><img src="assets/images/ribas/1(정).png" alt="리바스 정 1" loading="lazy" /></div>
+                <div class="img-grid__item"><img src="assets/images/ribas/2(정).png" alt="리바스 정 2" loading="lazy" /></div>
+                <div class="img-grid__item"><img src="assets/images/ribas/3(정).png" alt="리바스 정 3" loading="lazy" /></div>
+                <div class="img-grid__item"><img src="assets/images/ribas/4(정).png" alt="리바스 정 4" loading="lazy" /></div>
+                <div class="img-grid__item"><img src="assets/images/ribas/1(세).png" alt="리바스 세 1" loading="lazy" /></div>
+              </div>
+            </div>
+            <div class="subcampaign">
+              <h5 class="subcampaign__title">브랜드 영상 (2편)</h5>
+              <div class="video-grid">
+                <div><video src="assets/images/ribas/영상-1.mp4" poster="assets/images/ribas/thumbs/영상-1.jpg" preload="none" controls playsinline></video><span class="video-grid__caption">영상 1</span></div>
+                <div><video src="assets/images/ribas/영상-2.mp4" poster="assets/images/ribas/thumbs/영상-2.jpg" preload="none" controls playsinline></video><span class="video-grid__caption">영상 2</span></div>
+              </div>
+            </div>
+          </article>
+        </section>
+
+
+
+
+
+          <!-- ============================================================
+               전체 운영 클라이언트 (100개사+) — marketing/index.html 자료 동기화
+               ============================================================ -->
+          <style>
+            .clients { margin-top: clamp(2.4rem, 5vw, 3.6rem); }
+            .clients__head { text-align: center; margin-bottom: 1.6rem; }
+            .clients__head h3 { font-size: clamp(1.3rem, 2.6vw, 1.8rem); font-weight: 800; margin: 0 0 .35rem; }
+            .clients__head p { color: #94a3b8; font-size: .95rem; margin: 0; }
+            .cfilter { display: flex; flex-wrap: wrap; justify-content: center; gap: .5rem; margin: 0 0 1.6rem; }
+            .cfilter button { padding: .5rem 1.1rem; font-size: .85rem; font-weight: 600; border-radius: 999px; border: 1px solid #cbd5e1; background: #fff; color: #475569; cursor: pointer; transition: background .2s, color .2s, border-color .2s, transform .15s; }
+            .cfilter button:hover { color: #16161d; border-color: #94a3b8; }
+            .cfilter button.is-active { background: #10b981; color: #fff; border-color: #10b981; transform: translateY(-1px); box-shadow: 0 4px 10px rgba(16,185,129,.25); }
+            .cgrid { display: grid; gap: 1rem; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); }
+            .ccard { background: #fff; border-radius: 14px; overflow: hidden; box-shadow: 0 2px 10px rgba(0,0,0,.08); color: #0c0c14; transition: transform .2s, box-shadow .2s; display: flex; flex-direction: column; }
+            .ccard:hover { transform: translateY(-3px); box-shadow: 0 10px 28px rgba(0,0,0,.18); }
+            .ccard.is-hidden { display: none; }
+            .ccard__head { padding: 1rem 1.1rem 1.1rem; color: #fff; }
+            .ccard__name { font-size: 1.05rem; font-weight: 800; margin: 0 0 .25rem; }
+            .ccard__sub { font-size: .78rem; opacity: .85; margin: 0; }
+            .ccard__body { padding: .9rem 1.1rem 1.1rem; flex: 1; display: flex; flex-direction: column; }
+            .ccard__rows { display: flex; flex-direction: column; gap: .4rem; font-size: .8rem; }
+            .ccard__row { display: flex; justify-content: space-between; gap: 1rem; }
+            .ccard__row span { color: #94a3b8; }
+            .ccard__row strong { color: #0c0c14; font-weight: 600; text-align: right; }
+            .ccard__footer { margin-top: .8rem; padding-top: .7rem; border-top: 1px solid #e2e8f0; font-size: .78rem; font-weight: 600; display: flex; align-items: center; gap: .45rem; }
+            .ccard__bullet { width: 6px; height: 6px; border-radius: 50%; display: inline-block; }
+          </style>
+          <section class="clients reveal" id="clients" aria-label="전체 운영 클라이언트">
+            <div class="clients__head">
+              <h3>전체 운영 <span class="text-gradient">클라이언트</span></h3>
+              <p>이커머스 · 식품 · 인테리어 · 글로벌 · 개발 — 카이앤컴퍼니가 함께한 100개사+</p>
+            </div>
+            <div class="cfilter" role="group" aria-label="클라이언트 카테고리 필터">
+              <button type="button" data-cfilter="all" class="is-active" aria-pressed="true">전체</button>
+              <button type="button" data-cfilter="ecommerce" aria-pressed="false">이커머스</button>
+              <button type="button" data-cfilter="food" aria-pressed="false">식품</button>
+              <button type="button" data-cfilter="interior" aria-pressed="false">인테리어</button>
+              <button type="button" data-cfilter="global" aria-pressed="false">글로벌</button>
+              <button type="button" data-cfilter="dev" aria-pressed="false">개발</button>
+            </div>
+            <div class="cgrid" id="cgrid">
+              <article class="ccard" data-cat="ecommerce">
+                <header class="ccard__head" style="background:linear-gradient(135deg,#10b981,#0d9488);">
+                  <h4 class="ccard__name">독점마켓</h4>
+                  <p class="ccard__sub">종합 이커머스 플랫폼</p>
+                </header>
+                <div class="ccard__body">
+                  <div class="ccard__rows"><div class="ccard__row"><span>업종</span><strong>이커머스</strong></div><div class="ccard__row"><span>광고 유형</span><strong>전환 캠페인</strong></div><div class="ccard__row"><span>주요 전략</span><strong>다이나믹 카탈로그</strong></div><div class="ccard__row"><span>통화</span><strong>KRW</strong></div></div>
+                  <div class="ccard__footer" style="color:#6d28d9;"><span class="ccard__bullet" style="background:#6d28d9;"></span>ROAS 최적화 중심 운영</div>
+                </div>
+              </article>
+              <article class="ccard" data-cat="ecommerce">
+                <header class="ccard__head" style="background:linear-gradient(135deg,#8b5cf6,#9333ea);">
+                  <h4 class="ccard__name">4menmarket</h4>
+                  <p class="ccard__sub">남성 패션 전문 쇼핑몰</p>
+                </header>
+                <div class="ccard__body">
+                  <div class="ccard__rows"><div class="ccard__row"><span>업종</span><strong>패션/이커머스</strong></div><div class="ccard__row"><span>광고 유형</span><strong>카탈로그 + 전환</strong></div><div class="ccard__row"><span>주요 전략</span><strong>시즌별 타겟팅</strong></div><div class="ccard__row"><span>통화</span><strong>KRW</strong></div></div>
+                  <div class="ccard__footer" style="color:#9333ea;"><span class="ccard__bullet" style="background:#9333ea;"></span>패션 카테고리 특화 운영</div>
+                </div>
+              </article>
+              <article class="ccard" data-cat="interior">
+                <header class="ccard__head" style="background:linear-gradient(135deg,#3b82f6,#0891b2);">
+                  <h4 class="ccard__name">씨앤씨에어코리아</h4>
+                  <p class="ccard__sub">에어컨/실링팬 전문 브랜드</p>
+                </header>
+                <div class="ccard__body">
+                  <div class="ccard__rows"><div class="ccard__row"><span>업종</span><strong>가전/인테리어</strong></div><div class="ccard__row"><span>광고 유형</span><strong>인지 + 전환</strong></div><div class="ccard__row"><span>주요 전략</span><strong>시즌별 소구 전략</strong></div><div class="ccard__row"><span>통화</span><strong>KRW</strong></div></div>
+                  <div class="ccard__footer" style="color:#2563eb;"><span class="ccard__bullet" style="background:#2563eb;"></span>시즌 캠페인 중심 운영</div>
+                </div>
+              </article>
+              <article class="ccard" data-cat="global">
+                <header class="ccard__head" style="background:linear-gradient(135deg,#f59e0b,#f97316);">
+                  <h4 class="ccard__name">씨앤씨코리아 호주지사</h4>
+                  <p class="ccard__sub">Lockedair Australia</p>
+                </header>
+                <div class="ccard__body">
+                  <div class="ccard__rows"><div class="ccard__row"><span>업종</span><strong>가전 (해외)</strong></div><div class="ccard__row"><span>광고 유형</span><strong>글로벌 전환 캠페인</strong></div><div class="ccard__row"><span>주요 전략</span><strong>호주 시장 타겟팅</strong></div><div class="ccard__row"><span>통화</span><strong>AUD</strong></div></div>
+                  <div class="ccard__footer" style="color:#ea580c;"><span class="ccard__bullet" style="background:#ea580c;"></span>해외 시장 진출 마케팅</div>
+                </div>
+              </article>
+              <article class="ccard" data-cat="global interior">
+                <header class="ccard__head" style="background:linear-gradient(135deg,#f43f5e,#db2777);">
+                  <h4 class="ccard__name">리바스인테리어</h4>
+                  <p class="ccard__sub">프리미엄 인테리어 브랜드</p>
+                </header>
+                <div class="ccard__body">
+                  <div class="ccard__rows"><div class="ccard__row"><span>업종</span><strong>인테리어</strong></div><div class="ccard__row"><span>광고 유형</span><strong>인지 + 리드 생성</strong></div><div class="ccard__row"><span>주요 전략</span><strong>프리미엄 포지셔닝</strong></div><div class="ccard__row"><span>통화</span><strong>USD</strong></div></div>
+                  <div class="ccard__footer" style="color:#e11d48;"><span class="ccard__bullet" style="background:#e11d48;"></span>USD 글로벌 캠페인 운영</div>
+                </div>
+              </article>
+              <article class="ccard" data-cat="interior global">
+                <header class="ccard__head" style="background:linear-gradient(135deg,#0ea5e9,#2563eb);">
+                  <h4 class="ccard__name">에어로웨이실링팬</h4>
+                  <p class="ccard__sub">스마트 실링팬 전문 브랜드</p>
+                </header>
+                <div class="ccard__body">
+                  <div class="ccard__rows"><div class="ccard__row"><span>업종</span><strong>가전/인테리어</strong></div><div class="ccard__row"><span>광고 유형</span><strong>인지 + 전환</strong></div><div class="ccard__row"><span>주요 전략</span><strong>시즌별 소구 전략</strong></div><div class="ccard__row"><span>통화</span><strong>USD</strong></div></div>
+                  <div class="ccard__footer" style="color:#0284c7;"><span class="ccard__bullet" style="background:#0284c7;"></span>계절별 수요 공략</div>
+                </div>
+              </article>
+              <article class="ccard" data-cat="ecommerce">
+                <header class="ccard__head" style="background:linear-gradient(135deg,#ef4444,#e11d48);">
+                  <h4 class="ccard__name">미친특가광고</h4>
+                  <p class="ccard__sub">초특가 딜 전문 플랫폼</p>
+                </header>
+                <div class="ccard__body">
+                  <div class="ccard__rows"><div class="ccard__row"><span>업종</span><strong>이커머스/딜</strong></div><div class="ccard__row"><span>광고 유형</span><strong>전환 + 트래픽</strong></div><div class="ccard__row"><span>주요 전략</span><strong>긴급성/희소성 소구</strong></div><div class="ccard__row"><span>통화</span><strong>KRW</strong></div></div>
+                  <div class="ccard__footer" style="color:#dc2626;"><span class="ccard__bullet" style="background:#dc2626;"></span>타임딜 기반 전환 최적화</div>
+                </div>
+              </article>
+              <article class="ccard" data-cat="ecommerce">
+                <header class="ccard__head" style="background:linear-gradient(135deg,#334155,#0f172a);">
+                  <h4 class="ccard__name">청담마켓</h4>
+                  <p class="ccard__sub">프리미엄 라이프스타일</p>
+                </header>
+                <div class="ccard__body">
+                  <div class="ccard__rows"><div class="ccard__row"><span>업종</span><strong>라이프스타일</strong></div><div class="ccard__row"><span>광고 유형</span><strong>브랜딩 + 전환</strong></div><div class="ccard__row"><span>주요 전략</span><strong>프리미엄 타겟팅</strong></div><div class="ccard__row"><span>통화</span><strong>KRW</strong></div></div>
+                  <div class="ccard__footer" style="color:#475569;"><span class="ccard__bullet" style="background:#475569;"></span>프리미엄 브랜딩 전략</div>
+                </div>
+              </article>
+              <article class="ccard" data-cat="food">
+                <header class="ccard__head" style="background:linear-gradient(135deg,#eab308,#d97706);">
+                  <h4 class="ccard__name">하모아</h4>
+                  <p class="ccard__sub">한돈 삼겹살 프리미엄 브랜드</p>
+                </header>
+                <div class="ccard__body">
+                  <div class="ccard__rows"><div class="ccard__row"><span>업종</span><strong>식품</strong></div><div class="ccard__row"><span>광고 유형</span><strong>전환 캠페인</strong></div><div class="ccard__row"><span>주요 전략</span><strong>식품 특화 소구</strong></div><div class="ccard__row"><span>통화</span><strong>KRW</strong></div></div>
+                  <div class="ccard__footer" style="color:#d97706;"><span class="ccard__bullet" style="background:#d97706;"></span>식품 전환 최적화</div>
+                </div>
+              </article>
+              <article class="ccard" data-cat="food">
+                <header class="ccard__head" style="background:linear-gradient(135deg,#64748b,#475569);">
+                  <h4 class="ccard__name">기순도</h4>
+                  <p class="ccard__sub">전통장 프리미엄 브랜드</p>
+                </header>
+                <div class="ccard__body">
+                  <div class="ccard__rows"><div class="ccard__row"><span>업종</span><strong>식품/전통장</strong></div><div class="ccard__row"><span>광고 유형</span><strong>브랜딩 + 전환</strong></div><div class="ccard__row"><span>주요 전략</span><strong>전통/프리미엄 소구</strong></div><div class="ccard__row"><span>통화</span><strong>KRW</strong></div></div>
+                  <div class="ccard__footer" style="color:#475569;"><span class="ccard__bullet" style="background:#475569;"></span>프리미엄 전통 식품 마케팅</div>
+                </div>
+              </article>
+              <article class="ccard" data-cat="food ecommerce">
+                <header class="ccard__head" style="background:linear-gradient(135deg,#dc2626,#475569);">
+                  <h4 class="ccard__name">레드카페의 선물</h4>
+                  <p class="ccard__sub">선물/기프트 전문 브랜드</p>
+                </header>
+                <div class="ccard__body">
+                  <div class="ccard__rows"><div class="ccard__row"><span>업종</span><strong>선물/기프트</strong></div><div class="ccard__row"><span>광고 유형</span><strong>시즌 캠페인</strong></div><div class="ccard__row"><span>주요 전략</span><strong>기념일 타겟팅</strong></div><div class="ccard__row"><span>통화</span><strong>KRW</strong></div></div>
+                  <div class="ccard__footer" style="color:#dc2626;"><span class="ccard__bullet" style="background:#dc2626;"></span>시즌/기념일 캠페인</div>
+                </div>
+              </article>
+              <article class="ccard" data-cat="ecommerce">
+                <header class="ccard__head" style="background:linear-gradient(135deg,#6366f1,#4338ca);">
+                  <h4 class="ccard__name">네놈마켓</h4>
+                  <p class="ccard__sub">종합 온라인 마켓</p>
+                </header>
+                <div class="ccard__body">
+                  <div class="ccard__rows"><div class="ccard__row"><span>업종</span><strong>이커머스</strong></div><div class="ccard__row"><span>광고 유형</span><strong>전환 캠페인</strong></div><div class="ccard__row"><span>주요 전략</span><strong>카탈로그 광고</strong></div><div class="ccard__row"><span>통화</span><strong>KRW</strong></div></div>
+                  <div class="ccard__footer" style="color:#4f46e5;"><span class="ccard__bullet" style="background:#4f46e5;"></span>이커머스 전환 최적화</div>
+                </div>
+              </article>
+              <article class="ccard" data-cat="global">
+                <header class="ccard__head" style="background:linear-gradient(135deg,#14b8a6,#059669);">
+                  <h4 class="ccard__name">corea_ksdo</h4>
+                  <p class="ccard__sub">한국 문화 글로벌 브랜드</p>
+                </header>
+                <div class="ccard__body">
+                  <div class="ccard__rows"><div class="ccard__row"><span>업종</span><strong>문화/글로벌</strong></div><div class="ccard__row"><span>광고 유형</span><strong>인지 캠페인</strong></div><div class="ccard__row"><span>주요 전략</span><strong>글로벌 인지도 확대</strong></div><div class="ccard__row"><span>통화</span><strong>KRW</strong></div></div>
+                  <div class="ccard__footer" style="color:#0d9488;"><span class="ccard__bullet" style="background:#0d9488;"></span>한류 콘텐츠 마케팅</div>
+                </div>
+              </article>
+              <article class="ccard" data-cat="interior">
+                <header class="ccard__head" style="background:linear-gradient(135deg,#d946ef,#db2777);">
+                  <h4 class="ccard__name">리바스-카이</h4>
+                  <p class="ccard__sub">카이앤컴퍼니 인테리어 브랜드</p>
+                </header>
+                <div class="ccard__body">
+                  <div class="ccard__rows"><div class="ccard__row"><span>업종</span><strong>인테리어</strong></div><div class="ccard__row"><span>광고 유형</span><strong>리드 생성</strong></div><div class="ccard__row"><span>주요 전략</span><strong>인테리어 관심 타겟</strong></div><div class="ccard__row"><span>통화</span><strong>KRW</strong></div></div>
+                  <div class="ccard__footer" style="color:#475569;"><span class="ccard__bullet" style="background:#475569;"></span>인테리어 리드 최적화</div>
+                </div>
+              </article>
+              <article class="ccard" data-cat="dev">
+                <header class="ccard__head" style="background:linear-gradient(135deg,#4f46e5,#6d28d9);">
+                  <h4 class="ccard__name">네놈마켓 B2B 플랫폼</h4>
+                  <p class="ccard__sub">농수축산물 B2B 도매·유통 관리 SaaS</p>
+                </header>
+                <div class="ccard__body">
+                  <div class="ccard__rows"><div class="ccard__row"><span>프로젝트</span><strong>웹 플랫폼 풀스택 개발</strong></div><div class="ccard__row"><span>기술 스택</span><strong>Next.js · PostgreSQL · Prisma</strong></div><div class="ccard__row"><span>핵심 기능</span><strong>발주·정산·재고 자동화</strong></div><div class="ccard__row"><span>규모</span><strong>관리자 14 + 셀러 7 화면</strong></div></div>
+                  <div class="ccard__footer" style="color:#4f46e5;"><span class="ccard__bullet" style="background:#4f46e5;"></span>주문처리 80% 시간 단축 달성</div>
+                </div>
+              </article>
+              <article class="ccard" data-cat="dev">
+                <header class="ccard__head" style="background:linear-gradient(135deg,#1e293b,#475569);">
+                  <h4 class="ccard__name">기업 재무 분석 서비스</h4>
+                  <p class="ccard__sub">AI 기반 기업 재무 자동 분석 웹 서비스</p>
+                </header>
+                <div class="ccard__body">
+                  <div class="ccard__rows"><div class="ccard__row"><span>프로젝트</span><strong>FinTech 웹 서비스 개발</strong></div><div class="ccard__row"><span>기술 스택</span><strong>Next.js · Python · FastAPI</strong></div><div class="ccard__row"><span>핵심 기능</span><strong>재무제표 자동 분석·시각화</strong></div><div class="ccard__row"><span>데이터</span><strong>80만+ 기업 · DART API 연동</strong></div></div>
+                  <div class="ccard__footer" style="color:#475569;"><span class="ccard__bullet" style="background:#475569;"></span>5초 내 AI 분석 리포트 생성</div>
+                </div>
+              </article>
+              <article class="ccard" data-cat="dev">
+                <header class="ccard__head" style="background:linear-gradient(135deg,#0d9488,#047857);">
+                  <h4 class="ccard__name">정동병원 AI 챗봇</h4>
+                  <p class="ccard__sub">병원 재고관리 + AI 음성봇 통합 서비스</p>
+                </header>
+                <div class="ccard__body">
+                  <div class="ccard__rows"><div class="ccard__row"><span>프로젝트</span><strong>AI 챗봇 · 재고관리 플랫폼</strong></div><div class="ccard__row"><span>기술 스택</span><strong>Next.js · Claude API · KakaoTalk</strong></div><div class="ccard__row"><span>핵심 기능</span><strong>환자 자동응대 · 재고 예측</strong></div><div class="ccard__row"><span>연동</span><strong>국세청 세금계산서 자동발행</strong></div></div>
+                  <div class="ccard__footer" style="color:#0d9488;"><span class="ccard__bullet" style="background:#0d9488;"></span>연간 3,000만원 비용 절감</div>
+                </div>
+              </article>
+              <article class="ccard" data-cat="dev">
+                <header class="ccard__head" style="background:linear-gradient(135deg,#f59e0b,#ca8a04);">
+                  <h4 class="ccard__name">GW영어학원 LMS</h4>
+                  <p class="ccard__sub">학원 LMS + 학생/학부모 관리 플랫폼</p>
+                </header>
+                <div class="ccard__body">
+                  <div class="ccard__rows"><div class="ccard__row"><span>프로젝트</span><strong>학생관리 시스템 풀스택 개발</strong></div><div class="ccard__row"><span>기술 스택</span><strong>PHP · Laravel · MySQL</strong></div><div class="ccard__row"><span>핵심 기능</span><strong>4영역 평가 · 도서 관리</strong></div><div class="ccard__row"><span>운영 규모</span><strong>150+ 학생 관리</strong></div></div>
+                  <div class="ccard__footer" style="color:#d97706;"><span class="ccard__bullet" style="background:#d97706;"></span>Essay·Reading·Grammar·Discussion</div>
+                </div>
+              </article>
+              <article class="ccard" data-cat="dev ecommerce">
+                <header class="ccard__head" style="background:linear-gradient(135deg,#f43f5e,#dc2626);">
+                  <h4 class="ccard__name">쇼핑몰 구축 서비스</h4>
+                  <p class="ccard__sub">기획 · 디자인 · 개발 원스톱 구축</p>
+                </header>
+                <div class="ccard__body">
+                  <div class="ccard__rows"><div class="ccard__row"><span>프로젝트</span><strong>쇼핑몰 기획·구축·런칭</strong></div><div class="ccard__row"><span>플랫폼</span><strong>카페24 · 플렉스게이트</strong></div><div class="ccard__row"><span>구축 실적</span><strong>청담마켓 · 기순도 외 8건</strong></div><div class="ccard__row"><span>범위</span><strong>UI/UX · 결제 · 물류 연동</strong></div></div>
+                  <div class="ccard__footer" style="color:#e11d48;"><span class="ccard__bullet" style="background:#e11d48;"></span>기획부터 런칭까지 평균 4주</div>
+                </div>
+              </article>
+              <article class="ccard" data-cat="dev">
+                <header class="ccard__head" style="background:linear-gradient(135deg,#0891b2,#1d4ed8);">
+                  <h4 class="ccard__name">AI 업무 자동화 솔루션</h4>
+                  <p class="ccard__sub">광고 리포팅 · 소재 생성 · 데이터 분석</p>
+                </header>
+                <div class="ccard__body">
+                  <div class="ccard__rows"><div class="ccard__row"><span>프로젝트</span><strong>자체 AI 자동화 시스템 개발</strong></div><div class="ccard__row"><span>기술 스택</span><strong>Python · Claude API · Node.js</strong></div><div class="ccard__row"><span>핵심 기능</span><strong>리포트 자동생성 · 성과 분석</strong></div><div class="ccard__row"><span>적용 범위</span><strong>Meta·Google·Naver 광고 연동</strong></div></div>
+                  <div class="ccard__footer" style="color:#0891b2;"><span class="ccard__bullet" style="background:#0891b2;"></span>일간/주간/월간 리포트 자동 생성</div>
+                </div>
+              </article>
+            </div>
+          </section>
+          <script>
+            (function () {
+              var buttons = document.querySelectorAll('[data-cfilter]');
+              var cards = document.querySelectorAll('.ccard');
+              buttons.forEach(function (btn) {
+                btn.addEventListener('click', function () {
+                  var f = btn.getAttribute('data-cfilter');
+                  buttons.forEach(function (b) {
+                    var active = b === btn;
+                    b.classList.toggle('is-active', active);
+                    b.setAttribute('aria-pressed', String(active));
+                  });
+                  cards.forEach(function (c) {
+                    var cats = (c.getAttribute('data-cat') || '').split(/\s+/);
+                    var show = f === 'all' || cats.indexOf(f) !== -1;
+                    c.classList.toggle('is-hidden', !show);
+                  });
+                });
+              });
+            })();
+          </script>
+
+        <!-- CTA -->
+        <div class="section__head reveal" style="margin:clamp(3rem,7vw,5rem) auto 0; text-align:center; max-width:560px;">
+          <h2 class="section__title">다음 성공 사례는 <span class="text-gradient">당신의 브랜드</span></h2>
+          <p class="section__lead">결과로 증명하는 마케팅, 카이앤컴퍼니와 시작하세요.</p>
+          <p style="margin-top:1.6rem;">
+            <a class="btn btn--primary" href="index.html#contact">프로젝트 문의하기</a>
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- 포트폴리오 모달 -->
+  <div class="modal" data-modal role="dialog" aria-modal="true"
+       aria-labelledby="modal-title" aria-hidden="true">
+    <div class="modal__backdrop" data-modal-backdrop></div>
+    <div class="modal__dialog">
+      <button class="modal__close" data-modal-close aria-label="모달 닫기">&times;</button>
+      <div class="modal__media" data-modal-media></div>
+      <div class="modal__info">
+        <span class="modal__cat" data-modal-cat></span>
+        <h3 class="modal__title" id="modal-title" data-modal-title></h3>
+        <p class="modal__desc" data-modal-desc></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 푸터 -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__top">
+        <div class="footer__brand">
+          <img src="assets/logo.png" alt="카이앤컴퍼니 로고" />
+          <div>
+            <strong>카이앤컴퍼니</strong>
+            <span>Meta Ads Specialist Agency</span>
+          </div>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <span>&copy; <span data-year>2026</span> 카이앤컴퍼니. All rights reserved.</span>
+        <span class="footer__addr">서울시 서초구 서초대로 29길 22-18, 4층 <span class="footer__sep" aria-hidden="true">|</span> <a href="mailto:kaiandcomp@gmail.com">kaiandcomp@gmail.com</a></span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
