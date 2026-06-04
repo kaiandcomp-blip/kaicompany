@@ -79,6 +79,27 @@
     revealEls.forEach((el) => el.classList.add('is-visible'));
   }
 
+  /* ---------- 4-b. 아웃트로 글자별 리빌 (진입 시 1회) ---------- */
+  const outro = document.querySelector('[data-outro]');
+  if (outro) {
+    if ('IntersectionObserver' in window) {
+      const outroObs = new IntersectionObserver(
+        (entries, obs) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('is-visible');
+              obs.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.25 }
+      );
+      outroObs.observe(outro);
+    } else {
+      outro.classList.add('is-visible');
+    }
+  }
+
   /* ---------- 5. 통계 카운트업 (뷰포트 진입 시 1회) ---------- */
   const counters = document.querySelectorAll('[data-count]');
 

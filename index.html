@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>카이앤컴퍼니 (KAI COMPANY) | 마케팅 컨설팅 · 종합광고대행</title>
   <meta name="description" content="카이앤컴퍼니는 퍼포먼스 마케팅, 쇼핑몰·앱 개발, 디자인, 브랜딩으로 e-Commerce 성공의 비전을 제시하는 마케팅 컨설팅 전문회사입니다." />
-  <meta name="theme-color" content="#0c0c14" />
+  <meta name="theme-color" content="#0a0a0a" />
 
   <!-- Open Graph -->
   <meta property="og:title" content="카이앤컴퍼니 (KAI COMPANY)" />
@@ -15,9 +15,9 @@
 
   <link rel="icon" type="image/png" href="assets/logo.png" />
 
-  <!-- 한글 가독성 좋은 산세리프: Pretendard CDN -->
+  <!-- 한글 가독성 좋은 산세리프: Pretendard Variable CDN (stayweb 동일) -->
   <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css" />
 
   <link rel="stylesheet" href="css/style.css" />
 </head>
@@ -41,7 +41,7 @@
         <a class="nav__link" href="#system">SYSTEM</a>
         <a class="nav__link" href="#work">WORK</a>
         <a class="nav__link" href="#whyus">WHY US</a>
-        <a class="nav__link nav__link--cta" href="#contact">CONTACT</a>
+        <a class="nav__link nav__link--cta" href="#contact">LET'S TALK</a>
       </nav>
 
       <button class="nav-toggle" data-nav-toggle aria-label="메뉴 열기/닫기"
@@ -58,27 +58,38 @@
     <section class="hero" id="home" data-hero aria-label="메인 비주얼">
       <div class="hero__bg" aria-hidden="true"></div>
       <div class="hero__grid" aria-hidden="true"></div>
+      <canvas class="hero__canvas" data-hero-canvas aria-hidden="true"></canvas>
 
-      <div class="container hero__inner">
-        <span class="hero__badge"><span class="dot" aria-hidden="true"></span> 마케팅 컨설팅 · 종합광고대행</span>
-
-        <h1 class="hero__title">
-          <span class="line"><span class="reveal-line" style="--d:0.05s">셀러의 고민에 공감하고</span></span>
-          <span class="line"><span class="reveal-line text-gradient" style="--d:0.22s">독창적인 사고와 실천</span><span class="reveal-line" style="--d:0.34s">으로</span></span>
-          <span class="line"><span class="reveal-line" style="--d:0.5s">고객의 성공을 이끌겠습니다</span></span>
-        </h1>
-
-        <p class="hero__sub">어떠한 문제도 마지막 결과로 증명하겠습니다. 기획부터 개발, 마케팅, 유지보수까지 — 카이앤컴퍼니가 함께합니다.</p>
-
-        <div class="hero__actions">
-          <a class="btn btn--primary" href="#work">포트폴리오 보기</a>
-          <a class="btn btn--ghost" href="#contact">프로젝트 문의하기</a>
+      <div class="hero__inner">
+        <div class="hero__topline">
+          <span class="hero__badge">[ KAI COMPANY EXPERIMENTAL ]</span>
         </div>
-      </div>
 
-      <div class="hero__scroll" aria-hidden="true">
-        <span class="mouse"></span>
-        SCROLL
+        <div class="hero__main">
+          <h1 class="hero__title">
+            <span class="line"><span class="reveal-line" style="--d:0.05s">셀러의 고민에 공감하고</span></span>
+            <span class="line"><span class="reveal-line text-gradient" style="--d:0.22s">독창적인 사고와 실천</span><span class="reveal-line" style="--d:0.34s">으로</span></span>
+            <span class="line"><span class="reveal-line" style="--d:0.5s">고객의 성공을 이끌겠습니다</span></span>
+          </h1>
+        </div>
+
+        <div class="hero__bottom">
+          <div class="hero__lead-wrap">
+            <p class="hero__sub">마케터 · 개발자 · 디자이너 협업으로<br />전환까지 고려한 브랜드 마케팅을 실행합니다.</p>
+            <p class="hero__note">기획부터 개발 · 마케팅 · 유지보수까지 — 마지막 결과로 증명합니다.</p>
+          </div>
+
+          <div class="hero__cta">
+            <a class="hero-btn hero-btn--light" href="#work">
+              <span>포트폴리오 보기</span>
+              <span class="hero-btn__arrow" aria-hidden="true">→</span>
+            </a>
+            <a class="hero-btn hero-btn--dark" href="#contact">
+              <span>프로젝트 문의하기</span>
+              <span class="hero-btn__arrow" aria-hidden="true">→</span>
+            </a>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -88,7 +99,7 @@
     <section class="section section--alt" id="about" aria-labelledby="about-title">
       <div class="container">
         <div class="section__head reveal">
-          <span class="eyebrow">About Us</span>
+          <span class="eyebrow">[ 01 / ABOUT ]</span>
           <h2 class="section__title" id="about-title">최고는 아니지만, <span class="text-gradient">언제나 최선</span>입니다</h2>
           <p class="section__lead">공급자, 소비자 그리고 카이앤컴퍼니. 각자의 분야에서 선택과 집중으로 온라인 쇼핑몰의 새로운 비전을 제시합니다.</p>
         </div>
@@ -129,7 +140,7 @@
       <div class="container">
         <div class="strength__layout">
           <div class="reveal">
-            <span class="eyebrow">We Are Strength</span>
+            <span class="eyebrow">[ 02 / CORE STRENGTH ]</span>
             <div class="strength__visual">
               <h3 id="strength-title">데이터로<br />성과를 증명합니다</h3>
               <p>카이앤컴퍼니는 브랜드의 니즈를 파악하며 맞춤 솔루션을 제안합니다. 고도화된 데이터 분석과 솔루션을 통해 퍼포먼스 운영의 성과를 극대화하여 제품 및 서비스 매출 성장을 극대화합니다.</p>
@@ -172,7 +183,7 @@
       .srv-hero__tag {
         display: inline-flex; align-items: center; gap: .6rem;
         font-size: .8rem; font-weight: 700; letter-spacing: .22em; text-transform: uppercase;
-        color: #6d28d9; margin-bottom: 1.4rem;
+        color: #ff5f1f; margin-bottom: 1.4rem;
       }
       .srv-hero__tag::before, .srv-hero__tag::after { content: ""; width: 28px; height: 1px; background: currentColor; opacity: .35; }
       .srv-hero__title {
@@ -181,18 +192,18 @@
         letter-spacing: -0.04em;
         line-height: 1.02;
         margin: 0 0 1.4rem;
-        color: #0c0c14;
+        color: #0a0a0a;
         word-break: keep-all;
       }
       .srv-hero__title em {
         font-style: normal;
-        background: linear-gradient(120deg, #6d28d9 0%, #ec4899 60%, #f97316 100%);
+        background: linear-gradient(120deg, #ff5f1f 0%, #ff6a2f 60%, #ff5f1f 100%);
         -webkit-background-clip: text;
         background-clip: text;
         color: transparent;
         display: inline-block;
       }
-      .srv-hero__rule { width: 64px; height: 4px; margin: 0 auto 1.4rem; background: #0c0c14; border-radius: 2px; }
+      .srv-hero__rule { width: 64px; height: 4px; margin: 0 auto 1.4rem; background: #0a0a0a; border-radius: 2px; }
       .srv-hero__lead {
         font-size: clamp(1rem, 1.5vw, 1.15rem);
         color: #475569;
@@ -217,13 +228,13 @@
       }
       .srv-row::before {
         content: ""; position: absolute; left: 0; top: 50%; transform: translateY(-50%) scaleY(0);
-        width: 3px; height: 60%; background: linear-gradient(180deg, #6d28d9, #ec4899);
+        width: 3px; height: 60%; background: linear-gradient(180deg, #ff5f1f, #ff6a2f);
         transition: transform .35s;
       }
-      .srv-row:hover { background: #fafafe; padding-left: 1.2rem; }
+      .srv-row:hover { background: #fafafa; padding-left: 1.2rem; }
       .srv-row:hover::before { transform: translateY(-50%) scaleY(1); }
-      .srv-row:hover .srv-row__num { color: #6d28d9; }
-      .srv-row:hover .srv-row__title { color: #6d28d9; }
+      .srv-row:hover .srv-row__num { color: #ff5f1f; }
+      .srv-row:hover .srv-row__title { color: #ff5f1f; }
 
       .srv-row__num {
         font-size: clamp(1.8rem, 3.5vw, 2.6rem);
@@ -239,7 +250,7 @@
       .srv-row__title {
         font-size: clamp(1.2rem, 2.2vw, 1.6rem);
         font-weight: 800;
-        color: #0c0c14;
+        color: #0a0a0a;
         margin: 0 0 .35rem;
         letter-spacing: -0.01em;
         transition: color .25s;
@@ -260,7 +271,7 @@
         background: #f1f5f9; border: 1px solid #e2e8f0;
         transition: background .25s, color .25s, border-color .25s;
       }
-      .srv-row:hover .srv-row__tags span { background: #f3e8ff; color: #6d28d9; border-color: #e9d5ff; }
+      .srv-row:hover .srv-row__tags span { background: #fff3ec; color: #ff5f1f; border-color: #ffe6d6; }
 
       /* ----- 모바일: row 스택 ----- */
       @media (max-width: 720px) {
@@ -276,7 +287,7 @@
 
         <!-- 압도적 타이틀 -->
         <header class="srv-hero reveal">
-          <span class="srv-hero__tag">Our Service</span>
+          <span class="srv-hero__tag">[ 03 / SERVICE ]</span>
           <h1 class="srv-hero__title" id="services-title">
             Meta 광고<br>
             <em>전문 서비스</em>
@@ -360,22 +371,22 @@
       @media (min-width: 720px)  { .process__grid { grid-template-columns: repeat(2, 1fr); } }
       @media (min-width: 1024px) { .process__grid { grid-template-columns: repeat(4, 1fr); } }
       .process-step { position: relative; padding: clamp(1.4rem, 2.6vw, 1.8rem); background: #fff; border: 1px solid #e2e8f0; border-radius: var(--radius-lg); transition: transform .25s, box-shadow .25s, border-color .25s; counter-increment: process-step; }
-      .process-step:hover { transform: translateY(-3px); box-shadow: 0 10px 28px rgba(15, 23, 42, .1); border-color: #c4b5fd; }
+      .process-step:hover { transform: translateY(-3px); box-shadow: 0 10px 28px rgba(15, 23, 42, .1); border-color: #ffc4a3; }
       .process-step::before {
         content: counter(process-step, decimal-leading-zero);
         position: absolute; top: 1.2rem; right: 1.2rem;
-        font-size: 2rem; font-weight: 800; color: #f3e8ff; line-height: 1;
+        font-size: 2rem; font-weight: 800; color: #fff3ec; line-height: 1;
         letter-spacing: -0.04em; font-variant-numeric: tabular-nums;
       }
-      .process-step__icon { display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 44px; border-radius: 12px; background: linear-gradient(135deg, #6d28d9, #ec4899); color: #fff; font-size: 1.3rem; margin-bottom: 1rem; }
-      .process-step h3 { font-size: 1.1rem; font-weight: 800; margin: 0 0 .5rem; color: #0c0c14; }
+      .process-step__icon { display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 44px; border-radius: 12px; background: linear-gradient(135deg, #ff5f1f, #ff6a2f); color: #fff; font-size: 1.3rem; margin-bottom: 1rem; }
+      .process-step h3 { font-size: 1.1rem; font-weight: 800; margin: 0 0 .5rem; color: #0a0a0a; }
       .process-step p { font-size: .88rem; color: #475569; line-height: 1.55; margin: 0; word-break: keep-all; }
       .process-arrow { display: none; }
     </style>
     <section class="section process" id="process" aria-labelledby="process-title">
       <div class="container">
         <div class="section__head reveal">
-          <span class="eyebrow">Our Process</span>
+          <span class="eyebrow">[ 04 / PROCESS ]</span>
           <h2 class="section__title" id="process-title">체계적인 <span class="text-gradient">협업 프로세스</span></h2>
           <p class="section__lead">현황 분석부터 성과 리포팅까지 — 4단계 프로세스로 광고 성과를 극대화합니다.</p>
         </div>
@@ -409,36 +420,36 @@
          SYSTEM (AI 자동화 리포팅 시스템)
          ============================================================ -->
     <style>
-      .system { background: linear-gradient(180deg, #0c0c14 0%, #1a1538 100%); color: #f5f5fa; position: relative; overflow: hidden; }
-      .system::before { content: ""; position: absolute; inset: 0; background: radial-gradient(70% 60% at 80% 20%, rgba(139,92,246,.15), transparent 60%); pointer-events: none; }
+      .system { background: linear-gradient(180deg, #0a0a0a 0%, #171717 100%); color: #fafafa; position: relative; overflow: hidden; }
+      .system::before { content: ""; position: absolute; inset: 0; background: radial-gradient(70% 60% at 80% 20%, rgba(255, 95, 31,.15), transparent 60%); pointer-events: none; }
       .system .section__head { position: relative; }
       .system .section__title, .system .section__lead { color: #fff; }
-      .system .eyebrow { background: rgba(139,92,246,.18); color: #c4b5fd; }
+      .system .eyebrow { background: rgba(255, 95, 31,.18); color: #ffc4a3; }
 
       .system__grid { position: relative; display: grid; gap: 1.2rem; grid-template-columns: 1fr; }
       @media (min-width: 720px)  { .system__grid { grid-template-columns: repeat(2, 1fr); } }
       @media (min-width: 1024px) { .system__grid { grid-template-columns: repeat(4, 1fr); } }
       .sys-card { padding: 1.6rem 1.4rem; background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.08); border-radius: var(--radius-md); transition: transform .25s, border-color .25s, background .25s; }
-      .sys-card:hover { transform: translateY(-3px); border-color: rgba(196,181,253,.5); background: rgba(255,255,255,.06); }
-      .sys-card__icon { display: inline-flex; align-items: center; justify-content: center; width: 42px; height: 42px; border-radius: 11px; background: linear-gradient(135deg, #7c3aed, #ec4899); color: #fff; font-size: 1.2rem; margin-bottom: .9rem; }
+      .sys-card:hover { transform: translateY(-3px); border-color: rgba(255, 138, 61,.5); background: rgba(255,255,255,.06); }
+      .sys-card__icon { display: inline-flex; align-items: center; justify-content: center; width: 42px; height: 42px; border-radius: 11px; background: linear-gradient(135deg, #ff6a2f, #ff6a2f); color: #fff; font-size: 1.2rem; margin-bottom: .9rem; }
       .sys-card h3 { font-size: 1.05rem; font-weight: 800; margin: 0 0 .4rem; color: #fff; }
       .sys-card p { font-size: .85rem; color: #cbd5e1; line-height: 1.55; margin: 0; word-break: keep-all; }
 
       .sys-flow { position: relative; margin-top: clamp(2rem, 4vw, 3rem); padding: clamp(1.4rem, 3vw, 2rem); background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.08); border-radius: var(--radius-md); }
       .sys-flow h4 { color: #fff; font-size: 1.05rem; font-weight: 800; margin: 0 0 1.2rem; display: inline-flex; align-items: center; gap: .5rem; }
-      .sys-flow h4::before { content: ""; width: 10px; height: 10px; border-radius: 50%; background: linear-gradient(135deg, #7c3aed, #ec4899); }
+      .sys-flow h4::before { content: ""; width: 10px; height: 10px; border-radius: 50%; background: linear-gradient(135deg, #ff6a2f, #ff6a2f); }
       .sys-flow__steps { display: grid; gap: .9rem; grid-template-columns: 1fr; counter-reset: flow; }
       @media (min-width: 720px)  { .sys-flow__steps { grid-template-columns: repeat(2, 1fr); } }
       @media (min-width: 1024px) { .sys-flow__steps { grid-template-columns: repeat(4, 1fr); } }
-      .sys-flow-step { padding: 1rem 1.1rem; background: rgba(255,255,255,.03); border-left: 3px solid; border-image: linear-gradient(180deg, #7c3aed, #ec4899) 1; border-radius: 6px; counter-increment: flow; }
-      .sys-flow-step::before { content: "STEP " counter(flow, decimal-leading-zero); display: block; font-size: .65rem; font-weight: 700; letter-spacing: .12em; color: #c4b5fd; margin-bottom: .35rem; }
+      .sys-flow-step { padding: 1rem 1.1rem; background: rgba(255,255,255,.03); border-left: 3px solid; border-image: linear-gradient(180deg, #ff6a2f, #ff6a2f) 1; border-radius: 6px; counter-increment: flow; }
+      .sys-flow-step::before { content: "STEP " counter(flow, decimal-leading-zero); display: block; font-size: .65rem; font-weight: 700; letter-spacing: .12em; color: #ffc4a3; margin-bottom: .35rem; }
       .sys-flow-step strong { display: block; font-size: .9rem; color: #fff; font-weight: 700; margin-bottom: .25rem; }
       .sys-flow-step span { font-size: .76rem; color: #94a3b8; line-height: 1.5; word-break: keep-all; }
     </style>
     <section class="section system" id="system" aria-labelledby="system-title">
       <div class="container">
         <div class="section__head reveal">
-          <span class="eyebrow">AI System</span>
+          <span class="eyebrow">[ 05 / AI SYSTEM ]</span>
           <h2 class="section__title" id="system-title">AI 기반 <span class="text-gradient">광고 운영 시스템</span></h2>
           <p class="section__lead">자체 개발 AI 시스템으로 광고 성과를 실시간 분석하고 자동화된 리포팅을 제공합니다.</p>
         </div>
@@ -485,7 +496,7 @@
       <div class="container">
         <div class="work__top">
           <div class="section__head reveal" style="margin-bottom:0">
-            <span class="eyebrow">Our Work</span>
+            <span class="eyebrow">[ 06 / WORK ]</span>
             <h2 class="section__title" id="work-title">결과로 증명한 <span class="text-gradient">캠페인</span></h2>
             <p class="section__lead">카드를 클릭하면 영상·모션 콘텐츠를 확인할 수 있습니다.</p>
           </div>
@@ -592,8 +603,8 @@
           .mall-mini__media { aspect-ratio: 2/1; background: #f1f5f9; padding: .6rem; display: flex; align-items: center; justify-content: center; }
           .mall-mini__media img { width: 100%; height: 100%; object-fit: cover; border-radius: 8px; }
           .mall-mini__body { padding: .7rem .9rem .9rem; }
-          .mall-mini__tag { display: inline-block; font-size: .68rem; font-weight: 700; padding: 2px 7px; border-radius: 999px; background: #e7f5ec; color: #2f7d4a; margin-bottom: .35rem; }
-          .mall-mini__name { font-size: .92rem; font-weight: 700; margin: 0 0 .2rem; color: #0c0c14; }
+          .mall-mini__tag { display: inline-block; font-size: .68rem; font-weight: 700; padding: 2px 7px; border-radius: 999px; background: #fff3ec; color: #cc4612; margin-bottom: .35rem; }
+          .mall-mini__name { font-size: .92rem; font-weight: 700; margin: 0 0 .2rem; color: #0a0a0a; }
           .mall-mini__desc { font-size: .74rem; color: #64748b; margin: 0; }
         </style>
         <div class="work-mall reveal">
@@ -607,7 +618,7 @@
               <div class="mall-mini__body"><span class="mall-mini__tag">식품</span><h4 class="mall-mini__name">기순도전통장</h4><p class="mall-mini__desc">대한민국 식품명인 제35호</p></div>
             </a>
             <div class="mall-mini mall-mini--placeholder" aria-label="독점마켓">
-              <div class="mall-mini__media" style="background:linear-gradient(135deg,#10b981,#0d9488);color:#fff;font-size:1.2rem;font-weight:800;letter-spacing:-.01em;">독점마켓</div>
+              <div class="mall-mini__media" style="background:linear-gradient(135deg,#ff5f1f,#e0521a);color:#fff;font-size:1.2rem;font-weight:800;letter-spacing:-.01em;">독점마켓</div>
               <div class="mall-mini__body"><span class="mall-mini__tag">이커머스</span><h4 class="mall-mini__name">독점마켓</h4><p class="mall-mini__desc">종합 이커머스 플랫폼</p></div>
             </div>
             <a href="https://www.chungdam-market.com/" target="_blank" rel="noopener" class="mall-mini">
@@ -641,7 +652,7 @@
              함께한 클라이언트 요약 (100개사+) — 전체 리스트는 work.html
              ============================================================ -->
         <style>
-          /* #work 섹션이 .section--alt(밝은 배경 #f6f6fb)이므로 라이트 테마 팔레트 사용 */
+          /* #work 섹션이 .section--alt(밝은 배경 #fafafa)이므로 라이트 테마 팔레트 사용 */
           .work-clients { margin-top: clamp(2.4rem, 5vw, 3.6rem); padding: clamp(1.6rem, 3vw, 2.4rem); border-radius: 18px; border: 1px solid rgba(22,22,29,.08); background: #ffffff; box-shadow: 0 2px 12px rgba(22,22,29,.04); }
           .work-clients__head { text-align: center; margin-bottom: 1.6rem; }
           .work-clients__head h3 { font-size: clamp(1.3rem, 2.6vw, 1.8rem); margin: 0 0 .4rem; font-weight: 800; color: #16161d; }
@@ -649,15 +660,15 @@
           .wc-stats { display: grid; gap: .8rem; grid-template-columns: repeat(5, 1fr); margin: 1.4rem 0 1.8rem; }
           @media (max-width: 640px) { .wc-stats { grid-template-columns: repeat(2, 1fr); } }
           .wc-stat { text-align: center; padding: 1rem .4rem; border-radius: 12px; background: #f8fafc; border: 1px solid rgba(22,22,29,.06); }
-          .wc-stat b { display: block; font-size: 1.8rem; font-weight: 800; font-variant-numeric: tabular-nums; color: #6d28d9; line-height: 1; margin-bottom: .3rem; }
+          .wc-stat b { display: block; font-size: 1.8rem; font-weight: 800; font-variant-numeric: tabular-nums; color: #ff5f1f; line-height: 1; margin-bottom: .3rem; }
           .wc-stat span { font-size: .82rem; color: #475569; font-weight: 600; }
           /* 카드 필터 + 카드 그리드 (work.html 동일) */
           .cfilter { display: flex; flex-wrap: wrap; justify-content: center; gap: .5rem; margin: 0 0 1.6rem; }
           .cfilter button { padding: .5rem 1.1rem; font-size: .85rem; font-weight: 600; border-radius: 999px; border: 1px solid #cbd5e1; background: #fff; color: #475569; cursor: pointer; transition: background .2s, color .2s, border-color .2s, transform .15s; }
           .cfilter button:hover { color: #16161d; border-color: #94a3b8; }
-          .cfilter button.is-active { background: #10b981; color: #fff; border-color: #10b981; transform: translateY(-1px); box-shadow: 0 4px 10px rgba(16,185,129,.25); }
+          .cfilter button.is-active { background: #ff5f1f; color: #fff; border-color: #ff5f1f; transform: translateY(-1px); box-shadow: 0 4px 10px rgba(255, 95, 31,.25); }
           .cgrid { display: grid; gap: 1rem; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); }
-          .ccard { background: #fff; border-radius: 14px; overflow: hidden; box-shadow: 0 2px 10px rgba(0,0,0,.08); color: #0c0c14; transition: transform .2s, box-shadow .2s; display: flex; flex-direction: column; }
+          .ccard { background: #fff; border-radius: 14px; overflow: hidden; box-shadow: 0 2px 10px rgba(0,0,0,.08); color: #0a0a0a; transition: transform .2s, box-shadow .2s; display: flex; flex-direction: column; }
           .ccard:hover { transform: translateY(-3px); box-shadow: 0 10px 28px rgba(0,0,0,.18); }
           .ccard.is-hidden { display: none; }
           .ccard__head { padding: 1rem 1.1rem 1.1rem; color: #fff; }
@@ -667,7 +678,7 @@
           .ccard__rows { display: flex; flex-direction: column; gap: .4rem; font-size: .8rem; }
           .ccard__row { display: flex; justify-content: space-between; gap: 1rem; }
           .ccard__row span { color: #94a3b8; }
-          .ccard__row strong { color: #0c0c14; font-weight: 600; text-align: right; }
+          .ccard__row strong { color: #0a0a0a; font-weight: 600; text-align: right; }
           .ccard__footer { margin-top: .8rem; padding-top: .7rem; border-top: 1px solid #e2e8f0; font-size: .78rem; font-weight: 600; display: flex; align-items: center; gap: .45rem; }
           .ccard__bullet { width: 6px; height: 6px; border-radius: 50%; display: inline-block; }
         </style>
@@ -687,73 +698,73 @@
             </div>
             <div class="cgrid" id="cgrid">
               <article class="ccard" data-cat="ecommerce">
-                <header class="ccard__head" style="background:linear-gradient(135deg,#10b981,#0d9488);">
+                <header class="ccard__head" style="background:linear-gradient(135deg,#ff5f1f,#e0521a);">
                   <h4 class="ccard__name">독점마켓</h4>
                   <p class="ccard__sub">종합 이커머스 플랫폼</p>
                 </header>
                 <div class="ccard__body">
                   <div class="ccard__rows"><div class="ccard__row"><span>업종</span><strong>이커머스</strong></div><div class="ccard__row"><span>광고 유형</span><strong>전환 캠페인</strong></div><div class="ccard__row"><span>주요 전략</span><strong>다이나믹 카탈로그</strong></div><div class="ccard__row"><span>통화</span><strong>KRW</strong></div></div>
-                  <div class="ccard__footer" style="color:#6d28d9;"><span class="ccard__bullet" style="background:#6d28d9;"></span>ROAS 최적화 중심 운영</div>
+                  <div class="ccard__footer" style="color:#ff5f1f;"><span class="ccard__bullet" style="background:#ff5f1f;"></span>ROAS 최적화 중심 운영</div>
                 </div>
               </article>
               <article class="ccard" data-cat="ecommerce">
-                <header class="ccard__head" style="background:linear-gradient(135deg,#8b5cf6,#9333ea);">
+                <header class="ccard__head" style="background:linear-gradient(135deg,#ff8a4d,#ff7a3d);">
                   <h4 class="ccard__name">4menmarket</h4>
                   <p class="ccard__sub">남성 패션 전문 쇼핑몰</p>
                 </header>
                 <div class="ccard__body">
                   <div class="ccard__rows"><div class="ccard__row"><span>업종</span><strong>패션/이커머스</strong></div><div class="ccard__row"><span>광고 유형</span><strong>카탈로그 + 전환</strong></div><div class="ccard__row"><span>주요 전략</span><strong>시즌별 타겟팅</strong></div><div class="ccard__row"><span>통화</span><strong>KRW</strong></div></div>
-                  <div class="ccard__footer" style="color:#9333ea;"><span class="ccard__bullet" style="background:#9333ea;"></span>패션 카테고리 특화 운영</div>
+                  <div class="ccard__footer" style="color:#ff7a3d;"><span class="ccard__bullet" style="background:#ff7a3d;"></span>패션 카테고리 특화 운영</div>
                 </div>
               </article>
               <article class="ccard" data-cat="interior">
-                <header class="ccard__head" style="background:linear-gradient(135deg,#3b82f6,#0891b2);">
+                <header class="ccard__head" style="background:linear-gradient(135deg,#ff7a3d,#e0521a);">
                   <h4 class="ccard__name">씨앤씨에어코리아</h4>
                   <p class="ccard__sub">에어컨/실링팬 전문 브랜드</p>
                 </header>
                 <div class="ccard__body">
                   <div class="ccard__rows"><div class="ccard__row"><span>업종</span><strong>가전/인테리어</strong></div><div class="ccard__row"><span>광고 유형</span><strong>인지 + 전환</strong></div><div class="ccard__row"><span>주요 전략</span><strong>시즌별 소구 전략</strong></div><div class="ccard__row"><span>통화</span><strong>KRW</strong></div></div>
-                  <div class="ccard__footer" style="color:#2563eb;"><span class="ccard__bullet" style="background:#2563eb;"></span>시즌 캠페인 중심 운영</div>
+                  <div class="ccard__footer" style="color:#ff5f1f;"><span class="ccard__bullet" style="background:#ff5f1f;"></span>시즌 캠페인 중심 운영</div>
                 </div>
               </article>
               <article class="ccard" data-cat="global">
-                <header class="ccard__head" style="background:linear-gradient(135deg,#f59e0b,#f97316);">
+                <header class="ccard__head" style="background:linear-gradient(135deg,#ff8a3d,#ff5f1f);">
                   <h4 class="ccard__name">씨앤씨코리아 호주지사</h4>
                   <p class="ccard__sub">Lockedair Australia</p>
                 </header>
                 <div class="ccard__body">
                   <div class="ccard__rows"><div class="ccard__row"><span>업종</span><strong>가전 (해외)</strong></div><div class="ccard__row"><span>광고 유형</span><strong>글로벌 전환 캠페인</strong></div><div class="ccard__row"><span>주요 전략</span><strong>호주 시장 타겟팅</strong></div><div class="ccard__row"><span>통화</span><strong>AUD</strong></div></div>
-                  <div class="ccard__footer" style="color:#ea580c;"><span class="ccard__bullet" style="background:#ea580c;"></span>해외 시장 진출 마케팅</div>
+                  <div class="ccard__footer" style="color:#ff5f1f;"><span class="ccard__bullet" style="background:#ff5f1f;"></span>해외 시장 진출 마케팅</div>
                 </div>
               </article>
               <article class="ccard" data-cat="global interior">
-                <header class="ccard__head" style="background:linear-gradient(135deg,#f43f5e,#db2777);">
+                <header class="ccard__head" style="background:linear-gradient(135deg,#ff5f1f,#e0521a);">
                   <h4 class="ccard__name">리바스인테리어</h4>
                   <p class="ccard__sub">프리미엄 인테리어 브랜드</p>
                 </header>
                 <div class="ccard__body">
                   <div class="ccard__rows"><div class="ccard__row"><span>업종</span><strong>인테리어</strong></div><div class="ccard__row"><span>광고 유형</span><strong>인지 + 리드 생성</strong></div><div class="ccard__row"><span>주요 전략</span><strong>프리미엄 포지셔닝</strong></div><div class="ccard__row"><span>통화</span><strong>USD</strong></div></div>
-                  <div class="ccard__footer" style="color:#e11d48;"><span class="ccard__bullet" style="background:#e11d48;"></span>USD 글로벌 캠페인 운영</div>
+                  <div class="ccard__footer" style="color:#e0431a;"><span class="ccard__bullet" style="background:#e0431a;"></span>USD 글로벌 캠페인 운영</div>
                 </div>
               </article>
               <article class="ccard" data-cat="interior global">
-                <header class="ccard__head" style="background:linear-gradient(135deg,#0ea5e9,#2563eb);">
+                <header class="ccard__head" style="background:linear-gradient(135deg,#ff7a3d,#ff5f1f);">
                   <h4 class="ccard__name">에어로웨이실링팬</h4>
                   <p class="ccard__sub">스마트 실링팬 전문 브랜드</p>
                 </header>
                 <div class="ccard__body">
                   <div class="ccard__rows"><div class="ccard__row"><span>업종</span><strong>가전/인테리어</strong></div><div class="ccard__row"><span>광고 유형</span><strong>인지 + 전환</strong></div><div class="ccard__row"><span>주요 전략</span><strong>시즌별 소구 전략</strong></div><div class="ccard__row"><span>통화</span><strong>USD</strong></div></div>
-                  <div class="ccard__footer" style="color:#0284c7;"><span class="ccard__bullet" style="background:#0284c7;"></span>계절별 수요 공략</div>
+                  <div class="ccard__footer" style="color:#e0521a;"><span class="ccard__bullet" style="background:#e0521a;"></span>계절별 수요 공략</div>
                 </div>
               </article>
               <article class="ccard" data-cat="ecommerce">
-                <header class="ccard__head" style="background:linear-gradient(135deg,#ef4444,#e11d48);">
+                <header class="ccard__head" style="background:linear-gradient(135deg,#ff5f1f,#e0431a);">
                   <h4 class="ccard__name">미친특가광고</h4>
                   <p class="ccard__sub">초특가 딜 전문 플랫폼</p>
                 </header>
                 <div class="ccard__body">
                   <div class="ccard__rows"><div class="ccard__row"><span>업종</span><strong>이커머스/딜</strong></div><div class="ccard__row"><span>광고 유형</span><strong>전환 + 트래픽</strong></div><div class="ccard__row"><span>주요 전략</span><strong>긴급성/희소성 소구</strong></div><div class="ccard__row"><span>통화</span><strong>KRW</strong></div></div>
-                  <div class="ccard__footer" style="color:#dc2626;"><span class="ccard__bullet" style="background:#dc2626;"></span>타임딜 기반 전환 최적화</div>
+                  <div class="ccard__footer" style="color:#e0431a;"><span class="ccard__bullet" style="background:#e0431a;"></span>타임딜 기반 전환 최적화</div>
                 </div>
               </article>
               <article class="ccard" data-cat="ecommerce">
@@ -767,13 +778,13 @@
                 </div>
               </article>
               <article class="ccard" data-cat="food">
-                <header class="ccard__head" style="background:linear-gradient(135deg,#eab308,#d97706);">
+                <header class="ccard__head" style="background:linear-gradient(135deg,#ff9a3d,#e0521a);">
                   <h4 class="ccard__name">하모아</h4>
                   <p class="ccard__sub">한돈 삼겹살 프리미엄 브랜드</p>
                 </header>
                 <div class="ccard__body">
                   <div class="ccard__rows"><div class="ccard__row"><span>업종</span><strong>식품</strong></div><div class="ccard__row"><span>광고 유형</span><strong>전환 캠페인</strong></div><div class="ccard__row"><span>주요 전략</span><strong>식품 특화 소구</strong></div><div class="ccard__row"><span>통화</span><strong>KRW</strong></div></div>
-                  <div class="ccard__footer" style="color:#d97706;"><span class="ccard__bullet" style="background:#d97706;"></span>식품 전환 최적화</div>
+                  <div class="ccard__footer" style="color:#e0521a;"><span class="ccard__bullet" style="background:#e0521a;"></span>식품 전환 최적화</div>
                 </div>
               </article>
               <article class="ccard" data-cat="food">
@@ -787,37 +798,37 @@
                 </div>
               </article>
               <article class="ccard" data-cat="food ecommerce">
-                <header class="ccard__head" style="background:linear-gradient(135deg,#dc2626,#475569);">
+                <header class="ccard__head" style="background:linear-gradient(135deg,#e0431a,#475569);">
                   <h4 class="ccard__name">레드카페의 선물</h4>
                   <p class="ccard__sub">선물/기프트 전문 브랜드</p>
                 </header>
                 <div class="ccard__body">
                   <div class="ccard__rows"><div class="ccard__row"><span>업종</span><strong>선물/기프트</strong></div><div class="ccard__row"><span>광고 유형</span><strong>시즌 캠페인</strong></div><div class="ccard__row"><span>주요 전략</span><strong>기념일 타겟팅</strong></div><div class="ccard__row"><span>통화</span><strong>KRW</strong></div></div>
-                  <div class="ccard__footer" style="color:#dc2626;"><span class="ccard__bullet" style="background:#dc2626;"></span>시즌/기념일 캠페인</div>
+                  <div class="ccard__footer" style="color:#e0431a;"><span class="ccard__bullet" style="background:#e0431a;"></span>시즌/기념일 캠페인</div>
                 </div>
               </article>
               <article class="ccard" data-cat="ecommerce">
-                <header class="ccard__head" style="background:linear-gradient(135deg,#6366f1,#4338ca);">
+                <header class="ccard__head" style="background:linear-gradient(135deg,#ff7a3d,#cc4612);">
                   <h4 class="ccard__name">네놈마켓</h4>
                   <p class="ccard__sub">종합 온라인 마켓</p>
                 </header>
                 <div class="ccard__body">
                   <div class="ccard__rows"><div class="ccard__row"><span>업종</span><strong>이커머스</strong></div><div class="ccard__row"><span>광고 유형</span><strong>전환 캠페인</strong></div><div class="ccard__row"><span>주요 전략</span><strong>카탈로그 광고</strong></div><div class="ccard__row"><span>통화</span><strong>KRW</strong></div></div>
-                  <div class="ccard__footer" style="color:#4f46e5;"><span class="ccard__bullet" style="background:#4f46e5;"></span>이커머스 전환 최적화</div>
+                  <div class="ccard__footer" style="color:#e0521a;"><span class="ccard__bullet" style="background:#e0521a;"></span>이커머스 전환 최적화</div>
                 </div>
               </article>
               <article class="ccard" data-cat="global">
-                <header class="ccard__head" style="background:linear-gradient(135deg,#14b8a6,#059669);">
+                <header class="ccard__head" style="background:linear-gradient(135deg,#ff7a3d,#e0521a);">
                   <h4 class="ccard__name">corea_ksdo</h4>
                   <p class="ccard__sub">한국 문화 글로벌 브랜드</p>
                 </header>
                 <div class="ccard__body">
                   <div class="ccard__rows"><div class="ccard__row"><span>업종</span><strong>문화/글로벌</strong></div><div class="ccard__row"><span>광고 유형</span><strong>인지 캠페인</strong></div><div class="ccard__row"><span>주요 전략</span><strong>글로벌 인지도 확대</strong></div><div class="ccard__row"><span>통화</span><strong>KRW</strong></div></div>
-                  <div class="ccard__footer" style="color:#0d9488;"><span class="ccard__bullet" style="background:#0d9488;"></span>한류 콘텐츠 마케팅</div>
+                  <div class="ccard__footer" style="color:#e0521a;"><span class="ccard__bullet" style="background:#e0521a;"></span>한류 콘텐츠 마케팅</div>
                 </div>
               </article>
               <article class="ccard" data-cat="interior">
-                <header class="ccard__head" style="background:linear-gradient(135deg,#d946ef,#db2777);">
+                <header class="ccard__head" style="background:linear-gradient(135deg,#ff7a3d,#e0521a);">
                   <h4 class="ccard__name">리바스-카이</h4>
                   <p class="ccard__sub">카이앤컴퍼니 인테리어 브랜드</p>
                 </header>
@@ -827,13 +838,13 @@
                 </div>
               </article>
               <article class="ccard" data-cat="dev">
-                <header class="ccard__head" style="background:linear-gradient(135deg,#4f46e5,#6d28d9);">
+                <header class="ccard__head" style="background:linear-gradient(135deg,#e0521a,#ff5f1f);">
                   <h4 class="ccard__name">네놈마켓 B2B 플랫폼</h4>
                   <p class="ccard__sub">농수축산물 B2B 도매·유통 관리 SaaS</p>
                 </header>
                 <div class="ccard__body">
                   <div class="ccard__rows"><div class="ccard__row"><span>프로젝트</span><strong>웹 플랫폼 풀스택 개발</strong></div><div class="ccard__row"><span>기술 스택</span><strong>Next.js · PostgreSQL · Prisma</strong></div><div class="ccard__row"><span>핵심 기능</span><strong>발주·정산·재고 자동화</strong></div><div class="ccard__row"><span>규모</span><strong>관리자 14 + 셀러 7 화면</strong></div></div>
-                  <div class="ccard__footer" style="color:#4f46e5;"><span class="ccard__bullet" style="background:#4f46e5;"></span>주문처리 80% 시간 단축 달성</div>
+                  <div class="ccard__footer" style="color:#e0521a;"><span class="ccard__bullet" style="background:#e0521a;"></span>주문처리 80% 시간 단축 달성</div>
                 </div>
               </article>
               <article class="ccard" data-cat="dev">
@@ -847,43 +858,43 @@
                 </div>
               </article>
               <article class="ccard" data-cat="dev">
-                <header class="ccard__head" style="background:linear-gradient(135deg,#0d9488,#047857);">
+                <header class="ccard__head" style="background:linear-gradient(135deg,#e0521a,#cc4612);">
                   <h4 class="ccard__name">정동병원 AI 챗봇</h4>
                   <p class="ccard__sub">병원 재고관리 + AI 음성봇 통합 서비스</p>
                 </header>
                 <div class="ccard__body">
                   <div class="ccard__rows"><div class="ccard__row"><span>프로젝트</span><strong>AI 챗봇 · 재고관리 플랫폼</strong></div><div class="ccard__row"><span>기술 스택</span><strong>Next.js · Claude API · KakaoTalk</strong></div><div class="ccard__row"><span>핵심 기능</span><strong>환자 자동응대 · 재고 예측</strong></div><div class="ccard__row"><span>연동</span><strong>국세청 세금계산서 자동발행</strong></div></div>
-                  <div class="ccard__footer" style="color:#0d9488;"><span class="ccard__bullet" style="background:#0d9488;"></span>연간 3,000만원 비용 절감</div>
+                  <div class="ccard__footer" style="color:#e0521a;"><span class="ccard__bullet" style="background:#e0521a;"></span>연간 3,000만원 비용 절감</div>
                 </div>
               </article>
               <article class="ccard" data-cat="dev">
-                <header class="ccard__head" style="background:linear-gradient(135deg,#f59e0b,#ca8a04);">
+                <header class="ccard__head" style="background:linear-gradient(135deg,#ff8a3d,#e0521a);">
                   <h4 class="ccard__name">GW영어학원 LMS</h4>
                   <p class="ccard__sub">학원 LMS + 학생/학부모 관리 플랫폼</p>
                 </header>
                 <div class="ccard__body">
                   <div class="ccard__rows"><div class="ccard__row"><span>프로젝트</span><strong>학생관리 시스템 풀스택 개발</strong></div><div class="ccard__row"><span>기술 스택</span><strong>PHP · Laravel · MySQL</strong></div><div class="ccard__row"><span>핵심 기능</span><strong>4영역 평가 · 도서 관리</strong></div><div class="ccard__row"><span>운영 규모</span><strong>150+ 학생 관리</strong></div></div>
-                  <div class="ccard__footer" style="color:#d97706;"><span class="ccard__bullet" style="background:#d97706;"></span>Essay·Reading·Grammar·Discussion</div>
+                  <div class="ccard__footer" style="color:#e0521a;"><span class="ccard__bullet" style="background:#e0521a;"></span>Essay·Reading·Grammar·Discussion</div>
                 </div>
               </article>
               <article class="ccard" data-cat="dev ecommerce">
-                <header class="ccard__head" style="background:linear-gradient(135deg,#f43f5e,#dc2626);">
+                <header class="ccard__head" style="background:linear-gradient(135deg,#ff5f1f,#e0431a);">
                   <h4 class="ccard__name">쇼핑몰 구축 서비스</h4>
                   <p class="ccard__sub">기획 · 디자인 · 개발 원스톱 구축</p>
                 </header>
                 <div class="ccard__body">
                   <div class="ccard__rows"><div class="ccard__row"><span>프로젝트</span><strong>쇼핑몰 기획·구축·런칭</strong></div><div class="ccard__row"><span>플랫폼</span><strong>카페24 · 플렉스게이트</strong></div><div class="ccard__row"><span>구축 실적</span><strong>청담마켓 · 기순도 외 8건</strong></div><div class="ccard__row"><span>범위</span><strong>UI/UX · 결제 · 물류 연동</strong></div></div>
-                  <div class="ccard__footer" style="color:#e11d48;"><span class="ccard__bullet" style="background:#e11d48;"></span>기획부터 런칭까지 평균 4주</div>
+                  <div class="ccard__footer" style="color:#e0431a;"><span class="ccard__bullet" style="background:#e0431a;"></span>기획부터 런칭까지 평균 4주</div>
                 </div>
               </article>
               <article class="ccard" data-cat="dev">
-                <header class="ccard__head" style="background:linear-gradient(135deg,#0891b2,#1d4ed8);">
+                <header class="ccard__head" style="background:linear-gradient(135deg,#e0521a,#e0521a);">
                   <h4 class="ccard__name">AI 업무 자동화 솔루션</h4>
                   <p class="ccard__sub">광고 리포팅 · 소재 생성 · 데이터 분석</p>
                 </header>
                 <div class="ccard__body">
                   <div class="ccard__rows"><div class="ccard__row"><span>프로젝트</span><strong>자체 AI 자동화 시스템 개발</strong></div><div class="ccard__row"><span>기술 스택</span><strong>Python · Claude API · Node.js</strong></div><div class="ccard__row"><span>핵심 기능</span><strong>리포트 자동생성 · 성과 분석</strong></div><div class="ccard__row"><span>적용 범위</span><strong>Meta·Google·Naver 광고 연동</strong></div></div>
-                  <div class="ccard__footer" style="color:#0891b2;"><span class="ccard__bullet" style="background:#0891b2;"></span>일간/주간/월간 리포트 자동 생성</div>
+                  <div class="ccard__footer" style="color:#e0521a;"><span class="ccard__bullet" style="background:#e0521a;"></span>일간/주간/월간 리포트 자동 생성</div>
                 </div>
               </article>
             </div>
@@ -920,25 +931,25 @@
       .strategy__grid { display: grid; gap: clamp(1.2rem, 2.5vw, 1.8rem); grid-template-columns: 1fr; }
       @media (min-width: 720px)  { .strategy__grid { grid-template-columns: repeat(2, 1fr); } }
       .strat-card { background: #fff; border-radius: var(--radius-lg); padding: clamp(1.6rem, 3vw, 2.2rem); border: 1px solid #e2e8f0; transition: transform .25s, box-shadow .25s, border-color .25s; }
-      .strat-card:hover { transform: translateY(-3px); box-shadow: 0 10px 28px rgba(15, 23, 42, .1); border-color: #c4b5fd; }
+      .strat-card:hover { transform: translateY(-3px); box-shadow: 0 10px 28px rgba(15, 23, 42, .1); border-color: #ffc4a3; }
       .strat-card__head { display: flex; align-items: center; gap: .8rem; margin-bottom: 1.4rem; padding-bottom: 1.1rem; border-bottom: 1px solid #f1f5f9; }
       .strat-card__icon { display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 44px; border-radius: 12px; color: #fff; font-size: 1.3rem; flex-shrink: 0; }
-      .strat-card[data-c="ecom"] .strat-card__icon { background: linear-gradient(135deg, #f97316, #ea580c); }
-      .strat-card[data-c="food"] .strat-card__icon { background: linear-gradient(135deg, #22c55e, #16a34a); }
-      .strat-card[data-c="inte"] .strat-card__icon { background: linear-gradient(135deg, #06b6d4, #0891b2); }
-      .strat-card[data-c="glob"] .strat-card__icon { background: linear-gradient(135deg, #6d28d9, #ec4899); }
-      .strat-card__title { font-size: 1.15rem; font-weight: 800; color: #0c0c14; margin: 0 0 .15rem; }
+      .strat-card[data-c="ecom"] .strat-card__icon { background: linear-gradient(135deg, #ff5f1f, #ff5f1f); }
+      .strat-card[data-c="food"] .strat-card__icon { background: linear-gradient(135deg, #ff7a3d, #ff5f1f); }
+      .strat-card[data-c="inte"] .strat-card__icon { background: linear-gradient(135deg, #ff7a3d, #e0521a); }
+      .strat-card[data-c="glob"] .strat-card__icon { background: linear-gradient(135deg, #ff5f1f, #ff6a2f); }
+      .strat-card__title { font-size: 1.15rem; font-weight: 800; color: #0a0a0a; margin: 0 0 .15rem; }
       .strat-card__brands { font-size: .8rem; color: #64748b; }
       .strat-card__list { display: flex; flex-direction: column; gap: .9rem; margin: 0; padding: 0; list-style: none; }
       .strat-card__list li { display: flex; gap: .8rem; align-items: flex-start; }
-      .strat-card__num { display: inline-flex; align-items: center; justify-content: center; width: 24px; height: 24px; border-radius: 50%; background: #f3e8ff; color: #6d28d9; font-size: .72rem; font-weight: 800; flex-shrink: 0; margin-top: 2px; }
-      .strat-card__list b { display: block; font-size: .9rem; font-weight: 700; color: #0c0c14; margin-bottom: .15rem; }
+      .strat-card__num { display: inline-flex; align-items: center; justify-content: center; width: 24px; height: 24px; border-radius: 50%; background: #fff3ec; color: #ff5f1f; font-size: .72rem; font-weight: 800; flex-shrink: 0; margin-top: 2px; }
+      .strat-card__list b { display: block; font-size: .9rem; font-weight: 700; color: #0a0a0a; margin-bottom: .15rem; }
       .strat-card__list span { font-size: .8rem; color: #64748b; line-height: 1.5; word-break: keep-all; }
     </style>
     <section class="section strategy" id="strategy" aria-labelledby="strategy-title">
       <div class="container">
         <div class="section__head reveal">
-          <span class="eyebrow">Ad Strategy</span>
+          <span class="eyebrow">[ 07 / STRATEGY ]</span>
           <h2 class="section__title" id="strategy-title">업종별 <span class="text-gradient">광고 전략 사례</span></h2>
           <p class="section__lead">각 업종의 특성에 맞는 차별화된 전략으로 성과를 극대화합니다.</p>
         </div>
@@ -1015,18 +1026,18 @@
       .whyus__grid { display: grid; gap: clamp(1.2rem, 2.5vw, 1.6rem); grid-template-columns: 1fr; }
       @media (min-width: 720px)  { .whyus__grid { grid-template-columns: repeat(2, 1fr); } }
       @media (min-width: 1024px) { .whyus__grid { grid-template-columns: repeat(3, 1fr); } }
-      .why-card { position: relative; padding: clamp(1.6rem, 3vw, 2rem); background: #fafafe; border: 1px solid #ece9f8; border-radius: var(--radius-lg); transition: transform .25s, box-shadow .25s, border-color .25s; overflow: hidden; }
-      .why-card::before { content: ""; position: absolute; top: 0; left: 0; width: 100%; height: 4px; background: linear-gradient(90deg, #6d28d9, #ec4899); transform: scaleX(0); transform-origin: left; transition: transform .35s; }
-      .why-card:hover { transform: translateY(-3px); box-shadow: 0 10px 28px rgba(15, 23, 42, .08); border-color: #c4b5fd; }
+      .why-card { position: relative; padding: clamp(1.6rem, 3vw, 2rem); background: #fafafa; border: 1px solid #fff3ec; border-radius: var(--radius-lg); transition: transform .25s, box-shadow .25s, border-color .25s; overflow: hidden; }
+      .why-card::before { content: ""; position: absolute; top: 0; left: 0; width: 100%; height: 4px; background: linear-gradient(90deg, #ff5f1f, #ff6a2f); transform: scaleX(0); transform-origin: left; transition: transform .35s; }
+      .why-card:hover { transform: translateY(-3px); box-shadow: 0 10px 28px rgba(15, 23, 42, .08); border-color: #ffc4a3; }
       .why-card:hover::before { transform: scaleX(1); }
-      .why-card__no { display: block; font-size: .72rem; font-weight: 800; letter-spacing: .14em; color: #6d28d9; margin-bottom: .8rem; }
-      .why-card h3 { font-size: 1.1rem; font-weight: 800; color: #0c0c14; margin: 0 0 .6rem; word-break: keep-all; }
+      .why-card__no { display: block; font-size: .72rem; font-weight: 800; letter-spacing: .14em; color: #ff5f1f; margin-bottom: .8rem; }
+      .why-card h3 { font-size: 1.1rem; font-weight: 800; color: #0a0a0a; margin: 0 0 .6rem; word-break: keep-all; }
       .why-card p { font-size: .88rem; color: #475569; line-height: 1.6; margin: 0; word-break: keep-all; }
     </style>
     <section class="section whyus" id="whyus" aria-labelledby="whyus-title">
       <div class="container">
         <div class="section__head reveal">
-          <span class="eyebrow">Why Us</span>
+          <span class="eyebrow">[ 08 / WHY US ]</span>
           <h2 class="section__title" id="whyus-title">카이앤컴퍼니를 <span class="text-gradient">선택하는 이유</span></h2>
           <p class="section__lead">광고만이 아닙니다. 데이터·자동화·실행력까지 — 한 팀에서 끝냅니다.</p>
         </div>
@@ -1067,13 +1078,23 @@
     </section>
 
     <!-- ============================================================
+         OUTRO (stayweb 시그니처: 대형 선언 + 글자별 리빌)
+         ============================================================ -->
+    <section class="outro" data-outro aria-label="브랜드 선언">
+      <div class="container">
+        <p class="outro__statement">우리는 <em>평범한 결과</em>는<br />만들지 않습니다</p>
+        <p class="outro__stack" aria-label="빠르게 키운다고 아무 광고나 집행하지 않습니다. 브랜드의 분위기와 방향을 함께 고민하며 기억에 남는 성과를 만듭니다."><span class="ch" style="animation-delay:0.00s">빠</span><span class="ch" style="animation-delay:0.04s">르</span><span class="ch" style="animation-delay:0.07s">게</span><span class="ch" aria-hidden="true" style="width:.4em"> </span><span class="ch" style="animation-delay:0.11s">키</span><span class="ch" style="animation-delay:0.14s">운</span><span class="ch" style="animation-delay:0.18s">다</span><span class="ch" style="animation-delay:0.21s">고</span><span class="ch" aria-hidden="true" style="width:.4em"> </span><span class="ch" style="animation-delay:0.25s">아</span><span class="ch" style="animation-delay:0.28s">무</span><span class="ch" aria-hidden="true" style="width:.4em"> </span><span class="ch" style="animation-delay:0.32s">광</span><span class="ch" style="animation-delay:0.35s">고</span><span class="ch" style="animation-delay:0.39s">나</span><span class="ch" aria-hidden="true" style="width:.4em"> </span><span class="ch" style="animation-delay:0.42s">집</span><span class="ch" style="animation-delay:0.46s">행</span><span class="ch" style="animation-delay:0.49s">하</span><span class="ch" style="animation-delay:0.53s">지</span><span class="ch" aria-hidden="true" style="width:.4em"> </span><span class="ch" style="animation-delay:0.56s">않</span><span class="ch" style="animation-delay:0.60s">습</span><span class="ch" style="animation-delay:0.63s">니</span><span class="ch" style="animation-delay:0.67s">다</span><span class="ch" aria-hidden="true" style="width:.4em"> </span><span class="ch" aria-hidden="true" style="width:.4em"> </span><span class="ch" style="animation-delay:0.70s">브</span><span class="ch" style="animation-delay:0.74s">랜</span><span class="ch" style="animation-delay:0.77s">드</span><span class="ch" style="animation-delay:0.81s">의</span><span class="ch" aria-hidden="true" style="width:.4em"> </span><span class="ch" style="animation-delay:0.84s">분</span><span class="ch" style="animation-delay:0.88s">위</span><span class="ch" style="animation-delay:0.91s">기</span><span class="ch" style="animation-delay:0.95s">와</span><span class="ch" aria-hidden="true" style="width:.4em"> </span><span class="ch" style="animation-delay:0.98s">방</span><span class="ch" style="animation-delay:1.02s">향</span><span class="ch" style="animation-delay:1.05s">을</span><span class="ch" aria-hidden="true" style="width:.4em"> </span><span class="ch" style="animation-delay:1.09s">함</span><span class="ch" style="animation-delay:1.12s">께</span><span class="ch" aria-hidden="true" style="width:.4em"> </span><span class="ch" style="animation-delay:1.16s">고</span><span class="ch" style="animation-delay:1.19s">민</span><span class="ch" style="animation-delay:1.23s">하</span><span class="ch" style="animation-delay:1.26s">며</span><span class="ch" aria-hidden="true" style="width:.4em"> </span><span class="ch" style="animation-delay:1.30s">기</span><span class="ch" style="animation-delay:1.33s">억</span><span class="ch" style="animation-delay:1.37s">에</span><span class="ch" aria-hidden="true" style="width:.4em"> </span><span class="ch" style="animation-delay:1.40s">남</span><span class="ch" style="animation-delay:1.44s">는</span><span class="ch" aria-hidden="true" style="width:.4em"> </span><span class="ch" style="animation-delay:1.47s">성</span><span class="ch" style="animation-delay:1.51s">과</span><span class="ch" style="animation-delay:1.54s">를</span><span class="ch" aria-hidden="true" style="width:.4em"> </span><span class="ch" style="animation-delay:1.58s">만</span><span class="ch" style="animation-delay:1.61s">듭</span><span class="ch" style="animation-delay:1.65s">니</span><span class="ch" style="animation-delay:1.68s">다</span></p>
+      </div>
+    </section>
+
+    <!-- ============================================================
          CONTACT (문의 폼)
          ============================================================ -->
     <section class="section section--dark" id="contact" aria-labelledby="contact-title">
       <div class="container">
         <div class="contact__layout">
           <div class="contact__aside reveal">
-            <span class="eyebrow">Contact</span>
+            <span class="eyebrow">[ 09 / CONTACT ]</span>
             <h2 class="section__title" id="contact-title">프로젝트를 <span class="text-gradient">함께 시작</span>해요</h2>
             <p>마케팅, 쇼핑몰 개발, 디자인, 브랜딩 — 어떤 고민이든 편하게 문의 주세요. 결과로 증명하겠습니다.</p>
 
@@ -1166,6 +1187,13 @@
     </div>
   </footer>
 
+  <!-- 플로팅 CTA (stayweb LET'S TALK) -->
+  <a class="float-cta" href="#contact" aria-label="문의하기">
+    <span class="float-cta__dot" aria-hidden="true"></span> LET'S TALK
+  </a>
+
   <script src="js/main.js"></script>
+  <script src="js/cursor.js"></script>
+  <script type="module" src="js/hero3d.js"></script>
 </body>
 </html>
