@@ -893,6 +893,8 @@ ul { list-style: none; margin: 0; padding: 0; }
   color: var(--color-text-invert-muted);
   line-height: 1.9;
 }
+/* 문장 사이 강제 줄바꿈 (flex 컨테이너에서 줄 분리) */
+.outro__stack .outro__brk { flex-basis: 100%; width: 100%; height: 0; }
 .outro__stack .ch {
   display: inline-block;
   opacity: 0;
@@ -950,6 +952,7 @@ ul { list-style: none; margin: 0; padding: 0; }
 }
 .cursor-dot.is-visible { opacity: 1; }
 .cursor-dot.is-hover { width: 56px; height: 56px; }   /* 인터랙티브 요소 위 확대 */
+.cursor-dot.is-hover-sm { width: 18px; height: 18px; } /* 메뉴바(헤더) 위 — 작게 */
 .cursor-dot.is-down  { width: 22px; height: 22px; }    /* 클릭 시 축소 */
 
 /* JS 동작(=커서 활성) + 정밀 포인터에서만 네이티브 커서 숨김 */
@@ -974,6 +977,42 @@ ul { list-style: none; margin: 0; padding: 0; }
   0%   { background-position: 0 0; }
   100% { background-position: 18px -22px; }
 }
+
+/* ============================================================
+   stayweb 인터랙션 액션 (js/actions.js)
+   ============================================================ */
+/* 1) 텍스트 마스크 슬라이드업 리빌 */
+.sw-rise { display: block; overflow: hidden; }
+.sw-rise__inner {
+  display: inline-block;
+  transform: translateY(110%) rotate(2deg);
+  transition: transform 0.85s cubic-bezier(0.22, 0.61, 0.36, 1);
+  will-change: transform;
+  padding-bottom: 0.12em;   /* descender 클리핑 방지 */
+  margin-bottom: -0.12em;
+}
+.sw-rise.is-in .sw-rise__inner { transform: none; }
+.section__title.sw-rise .sw-rise__inner { transition-delay: 0.07s; }
+.section__lead.sw-rise .sw-rise__inner { transition-delay: 0.14s; }
+@media (prefers-reduced-motion: reduce) {
+  .sw-rise__inner { transform: none !important; transition: none; }
+}
+
+/* 2) 카드 마우스 스포트라이트 + 3D 틸트 */
+.sw-spot { position: relative; transform-style: preserve-3d; }
+.sw-spot::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  z-index: 0;
+  background: radial-gradient(600px circle at var(--mx, -200px) var(--my, -200px), rgba(255, 255, 255, 0.09), transparent 40%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.sw-spot:hover::after { opacity: 1; }
+.sw-spot > * { position: relative; z-index: 1; }
 
 /* ============================================================
    CONTACT

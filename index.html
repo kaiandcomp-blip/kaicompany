@@ -31,7 +31,7 @@
     <div class="container header__inner">
       <a class="brand" href="#home" aria-label="카이앤컴퍼니 홈">
         <img class="brand__logo" src="assets/logo.png" alt="카이앤컴퍼니 로고" />
-        <span class="brand__name">KAI&nbsp;COMPANY</span>
+        <span class="brand__name">KAI&amp;COMPANY</span>
       </a>
 
       <nav class="nav" id="primary-nav" data-nav aria-label="주요 메뉴">
@@ -39,9 +39,9 @@
         <a class="nav__link" href="#services">SERVICE</a>
         <a class="nav__link" href="#process">PROCESS</a>
         <a class="nav__link" href="#system">SYSTEM</a>
-        <a class="nav__link" href="#work">WORK</a>
+        <a class="nav__link" href="#work">PORTFOLIO</a>
         <a class="nav__link" href="#whyus">WHY US</a>
-        <a class="nav__link nav__link--cta" href="#contact">LET'S TALK</a>
+        <a class="nav__link nav__link--cta" href="https://open.kakao.com/me/kaicompany" target="_blank" rel="noopener noreferrer">LET'S TALK</a>
       </nav>
 
       <button class="nav-toggle" data-nav-toggle aria-label="메뉴 열기/닫기"
@@ -61,10 +61,6 @@
       <canvas class="hero__canvas" data-hero-canvas aria-hidden="true"></canvas>
 
       <div class="hero__inner">
-        <div class="hero__topline">
-          <span class="hero__badge">[ KAI COMPANY EXPERIMENTAL ]</span>
-        </div>
-
         <div class="hero__main">
           <h1 class="hero__title">
             <span class="line"><span class="reveal-line" style="--d:0.05s">셀러의 고민에 공감하고</span></span>
@@ -84,7 +80,7 @@
               <span>포트폴리오 보기</span>
               <span class="hero-btn__arrow" aria-hidden="true">→</span>
             </a>
-            <a class="hero-btn hero-btn--dark" href="#contact">
+            <a class="hero-btn hero-btn--dark" href="https://open.kakao.com/me/kaicompany" target="_blank" rel="noopener noreferrer">
               <span>프로젝트 문의하기</span>
               <span class="hero-btn__arrow" aria-hidden="true">→</span>
             </a>
@@ -134,13 +130,76 @@
     </section>
 
     <!-- ============================================================
+         THE PROBLEM — 시장 문제 제기 (다크) / stayweb 구조 차용
+         ============================================================ -->
+    <style>
+      .problem .section__title { color: #fff; }
+      .problem__grid { display: grid; grid-template-columns: 1fr; gap: 1.5rem; max-width: 1200px; margin-inline: auto; }
+      @media (min-width: 960px) { .problem__grid { grid-template-columns: 2fr 1fr; align-items: stretch; } }
+      .problem__cards { display: grid; grid-template-columns: 1fr; gap: 1.5rem; }
+      @media (min-width: 600px) { .problem__cards { grid-template-columns: 1fr 1fr; } }
+      .problem-card { border: 1px solid rgba(255,255,255,.08); background: rgba(255,255,255,.02); border-radius: 18px; padding: 1.8rem; transition: border-color .35s, background .35s; }
+      .problem-card:hover { border-color: rgba(255,255,255,.18); background: rgba(255,255,255,.04); }
+      .problem-card__icon { width: 44px; height: 44px; border-radius: 50%; display: flex; align-items: center; justify-content: center; background: rgba(255,255,255,.06); font-size: 1.2rem; margin-bottom: 1.2rem; }
+      .problem-card h3 { font-size: 1.2rem; font-weight: 800; color: #e8e8ea; margin: 0 0 .5rem; }
+      .problem-card p { font-size: .95rem; color: #8a8a92; line-height: 1.55; margin: 0; word-break: keep-all; }
+      .problem-solve { border: 1px solid rgba(255,95,31,.5); background: linear-gradient(160deg, rgba(255,95,31,.16), rgba(255,95,31,.04)); border-radius: 18px; padding: 2rem; display: flex; flex-direction: column; justify-content: center; }
+      .problem-solve h3 { font-size: 1.4rem; font-weight: 800; color: #fff; margin: 0 0 1.4rem; }
+      .problem-solve ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 1rem; }
+      .problem-solve li { display: flex; align-items: center; gap: .7rem; font-weight: 700; color: #ffd9c4; font-size: 1rem; word-break: keep-all; }
+      .problem-solve li::before { content: "⚡"; font-size: 1rem; }
+    </style>
+    <section class="section section--dark problem" id="problem" aria-labelledby="problem-title">
+      <div class="container">
+        <div class="section__head reveal" style="text-align:left">
+          <span class="eyebrow">[ 02 / THE PROBLEM ]</span>
+          <h2 class="section__title" id="problem-title">광고비는 늘어나는데,<br /><span class="text-gradient">왜 매출은 그대로일까요?</span></h2>
+        </div>
+        <div class="problem__grid">
+          <div class="problem__cards">
+            <article class="problem-card">
+              <div class="problem-card__icon" aria-hidden="true">👁️</div>
+              <h3>깜깜이 운영</h3>
+              <p>대행사가 뭘 하는지 월말 보고서로만 압니다</p>
+            </article>
+            <article class="problem-card">
+              <div class="problem-card__icon" aria-hidden="true">🔌</div>
+              <h3>분리된 채널</h3>
+              <p>광고·디자인·쇼핑몰이 따로 놀아 전환이 샙니다</p>
+            </article>
+            <article class="problem-card">
+              <div class="problem-card__icon" aria-hidden="true">🐢</div>
+              <h3>느린 대응</h3>
+              <p>소재 한 번 교체에 며칠씩 걸립니다</p>
+            </article>
+            <article class="problem-card">
+              <div class="problem-card__icon" aria-hidden="true">💸</div>
+              <h3>불투명한 비용</h3>
+              <p>성과와 무관하게 수수료만 빠져나갑니다</p>
+            </article>
+          </div>
+          <aside class="problem-solve reveal" data-delay="1">
+            <h3>카이앤컴퍼니는 다릅니다</h3>
+            <ul>
+              <li>데이터 기반 실시간 운영</li>
+              <li>기획·개발·광고 한 팀</li>
+              <li>소재 24시간 내 교체</li>
+              <li>매출 직결 KPI만 관리</li>
+              <li>투명한 리포트 실시간 공유</li>
+            </ul>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
          STRENGTH + STATS (다크 섹션, 카운트업)
          ============================================================ -->
     <section class="section section--dark" id="strength" aria-labelledby="strength-title">
       <div class="container">
         <div class="strength__layout">
           <div class="reveal">
-            <span class="eyebrow">[ 02 / CORE STRENGTH ]</span>
+            <span class="eyebrow">[ 03 / CORE STRENGTH ]</span>
             <div class="strength__visual">
               <h3 id="strength-title">데이터로<br />성과를 증명합니다</h3>
               <p>카이앤컴퍼니는 브랜드의 니즈를 파악하며 맞춤 솔루션을 제안합니다. 고도화된 데이터 분석과 솔루션을 통해 퍼포먼스 운영의 성과를 극대화하여 제품 및 서비스 매출 성장을 극대화합니다.</p>
@@ -167,6 +226,36 @@
             </div>
           </div>
         </div>
+
+        <!-- 압도적인 차이 01/02/03 (stayweb CORE STRENGTHS 구조 차용) -->
+        <style>
+          .diff { margin-top: clamp(3rem, 6vw, 4.5rem); display: grid; grid-template-columns: 1fr; gap: 2rem; border-top: 1px solid rgba(255,255,255,.1); padding-top: clamp(2.5rem, 5vw, 3.5rem); }
+          @media (min-width: 768px) { .diff { grid-template-columns: repeat(3, 1fr); gap: 2.5rem; } }
+          .diff__num { display: block; font-size: clamp(2.6rem, 5vw, 3.6rem); font-weight: 900; font-variant-numeric: tabular-nums; line-height: 1; color: rgba(255,255,255,.12); letter-spacing: -.03em; margin-bottom: 1.4rem; }
+          .diff__title { font-size: clamp(1.15rem, 2vw, 1.4rem); font-weight: 800; color: #fff; margin: 0 0 1rem; word-break: keep-all; }
+          .diff__lead { font-size: .95rem; font-weight: 700; color: #ffd9c4; margin: 0 0 .6rem; padding-left: .9rem; border-left: 2px solid #ff5f1f; word-break: keep-all; }
+          .diff__desc { font-size: .9rem; color: #8a8a92; line-height: 1.55; margin: 0; word-break: keep-all; }
+        </style>
+        <div class="diff reveal" data-delay="1">
+          <div class="diff__col">
+            <span class="diff__num">01</span>
+            <h4 class="diff__title">감이 아닌 데이터로 결정합니다</h4>
+            <p class="diff__lead">매체·소재·예산을 숫자로 배분</p>
+            <p class="diff__desc">고도화된 분석으로 ROAS를 끌어올립니다</p>
+          </div>
+          <div class="diff__col">
+            <span class="diff__num">02</span>
+            <h4 class="diff__title">한 팀이 끝까지 책임집니다</h4>
+            <p class="diff__lead">기획·디자인·개발·광고 한 호흡</p>
+            <p class="diff__desc">채널 사이에서 새는 전환을 막습니다</p>
+          </div>
+          <div class="diff__col">
+            <span class="diff__num">03</span>
+            <h4 class="diff__title">런칭 이후 성장까지 봅니다</h4>
+            <p class="diff__lead">운영이 끝이 아닌 시작</p>
+            <p class="diff__desc">지속 성장 파트너십으로 매출을 키웁니다</p>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -179,13 +268,13 @@
       .services-v2 { padding-block: clamp(4rem, 9vw, 7rem); }
 
       /* ----- 타이틀 영역 (압도적 크기) ----- */
-      .srv-hero { text-align: center; margin-bottom: clamp(3.5rem, 7vw, 5.5rem); }
+      .srv-hero { text-align: left; margin-bottom: clamp(3.5rem, 7vw, 5.5rem); }
       .srv-hero__tag {
         display: inline-flex; align-items: center; gap: .6rem;
         font-size: .8rem; font-weight: 700; letter-spacing: .22em; text-transform: uppercase;
         color: #ff5f1f; margin-bottom: 1.4rem;
       }
-      .srv-hero__tag::before, .srv-hero__tag::after { content: ""; width: 28px; height: 1px; background: currentColor; opacity: .35; }
+      .srv-hero__tag::before, .srv-hero__tag::after { display: none; }
       .srv-hero__title {
         font-size: clamp(2.6rem, 8vw, 6rem);
         font-weight: 900;
@@ -203,12 +292,12 @@
         color: transparent;
         display: inline-block;
       }
-      .srv-hero__rule { width: 64px; height: 4px; margin: 0 auto 1.4rem; background: #0a0a0a; border-radius: 2px; }
+      .srv-hero__rule { width: 64px; height: 4px; margin: 0 0 1.4rem; background: #0a0a0a; border-radius: 2px; }
       .srv-hero__lead {
         font-size: clamp(1rem, 1.5vw, 1.15rem);
         color: #475569;
         max-width: 540px;
-        margin: 0 auto;
+        margin: 0;
         line-height: 1.6;
         word-break: keep-all;
       }
@@ -287,7 +376,7 @@
 
         <!-- 압도적 타이틀 -->
         <header class="srv-hero reveal">
-          <span class="srv-hero__tag">[ 03 / SERVICE ]</span>
+          <span class="srv-hero__tag">[ 04 / SERVICE ]</span>
           <h1 class="srv-hero__title" id="services-title">
             Meta 광고<br>
             <em>전문 서비스</em>
@@ -386,7 +475,7 @@
     <section class="section process" id="process" aria-labelledby="process-title">
       <div class="container">
         <div class="section__head reveal">
-          <span class="eyebrow">[ 04 / PROCESS ]</span>
+          <span class="eyebrow">[ 05 / PROCESS ]</span>
           <h2 class="section__title" id="process-title">체계적인 <span class="text-gradient">협업 프로세스</span></h2>
           <p class="section__lead">현황 분석부터 성과 리포팅까지 — 4단계 프로세스로 광고 성과를 극대화합니다.</p>
         </div>
@@ -424,7 +513,7 @@
       .system::before { content: ""; position: absolute; inset: 0; background: radial-gradient(70% 60% at 80% 20%, rgba(255, 95, 31,.15), transparent 60%); pointer-events: none; }
       .system .section__head { position: relative; }
       .system .section__title, .system .section__lead { color: #fff; }
-      .system .eyebrow { background: rgba(255, 95, 31,.18); color: #ffc4a3; }
+      .system .eyebrow { color: var(--brand); }
 
       .system__grid { position: relative; display: grid; gap: 1.2rem; grid-template-columns: 1fr; }
       @media (min-width: 720px)  { .system__grid { grid-template-columns: repeat(2, 1fr); } }
@@ -449,7 +538,7 @@
     <section class="section system" id="system" aria-labelledby="system-title">
       <div class="container">
         <div class="section__head reveal">
-          <span class="eyebrow">[ 05 / AI SYSTEM ]</span>
+          <span class="eyebrow">[ 06 / AI SYSTEM ]</span>
           <h2 class="section__title" id="system-title">AI 기반 <span class="text-gradient">광고 운영 시스템</span></h2>
           <p class="section__lead">자체 개발 AI 시스템으로 광고 성과를 실시간 분석하고 자동화된 리포팅을 제공합니다.</p>
         </div>
@@ -496,7 +585,7 @@
       <div class="container">
         <div class="work__top">
           <div class="section__head reveal" style="margin-bottom:0">
-            <span class="eyebrow">[ 06 / WORK ]</span>
+            <span class="eyebrow">[ 07 / PORTFOLIO ]</span>
             <h2 class="section__title" id="work-title">결과로 증명한 <span class="text-gradient">캠페인</span></h2>
             <p class="section__lead">카드를 클릭하면 영상·모션 콘텐츠를 확인할 수 있습니다.</p>
           </div>
@@ -594,9 +683,9 @@
              ============================================================ -->
         <style>
           .work-mall { margin-top: clamp(2.4rem, 5vw, 3.6rem); }
-          .work-mall__head { text-align: center; margin-bottom: 1.6rem; }
+          .work-mall__head { text-align: left; margin-bottom: 1.6rem; }
           .work-mall__head h3 { font-size: clamp(1.3rem, 2.6vw, 1.8rem); margin: 0 0 .4rem; font-weight: 800; }
-          .work-mall__head p { color: var(--c-text-muted, #94a3b8); font-size: .95rem; margin: 0; }
+          .work-mall__head p { color: var(--c-text-muted, #94a3b8); font-size: .95rem; margin: 0; word-break: keep-all; }
           .work-mall__grid { display: grid; gap: 1rem; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); }
           .mall-mini { display: block; background: #fff; border-radius: 14px; overflow: hidden; text-decoration: none; color: inherit; box-shadow: 0 2px 10px rgba(0,0,0,.06); transition: transform .25s, box-shadow .25s; }
           .mall-mini:hover { transform: translateY(-4px); box-shadow: 0 10px 28px rgba(0,0,0,.15); }
@@ -654,7 +743,7 @@
         <style>
           /* #work 섹션이 .section--alt(밝은 배경 #fafafa)이므로 라이트 테마 팔레트 사용 */
           .work-clients { margin-top: clamp(2.4rem, 5vw, 3.6rem); padding: clamp(1.6rem, 3vw, 2.4rem); border-radius: 18px; border: 1px solid rgba(22,22,29,.08); background: #ffffff; box-shadow: 0 2px 12px rgba(22,22,29,.04); }
-          .work-clients__head { text-align: center; margin-bottom: 1.6rem; }
+          .work-clients__head { text-align: left; margin-bottom: 1.6rem; }
           .work-clients__head h3 { font-size: clamp(1.3rem, 2.6vw, 1.8rem); margin: 0 0 .4rem; font-weight: 800; color: #16161d; }
           .work-clients__head p { color: #5a5a6e; font-size: .95rem; margin: 0; }
           .wc-stats { display: grid; gap: .8rem; grid-template-columns: repeat(5, 1fr); margin: 1.4rem 0 1.8rem; }
@@ -663,10 +752,16 @@
           .wc-stat b { display: block; font-size: 1.8rem; font-weight: 800; font-variant-numeric: tabular-nums; color: #ff5f1f; line-height: 1; margin-bottom: .3rem; }
           .wc-stat span { font-size: .82rem; color: #475569; font-weight: 600; }
           /* 카드 필터 + 카드 그리드 (work.html 동일) */
-          .cfilter { display: flex; flex-wrap: wrap; justify-content: center; gap: .5rem; margin: 0 0 1.6rem; }
+          .cfilter { display: flex; flex-wrap: wrap; justify-content: flex-start; gap: .5rem; margin: 0 0 1.6rem; }
           .cfilter button { padding: .5rem 1.1rem; font-size: .85rem; font-weight: 600; border-radius: 999px; border: 1px solid #cbd5e1; background: #fff; color: #475569; cursor: pointer; transition: background .2s, color .2s, border-color .2s, transform .15s; }
           .cfilter button:hover { color: #16161d; border-color: #94a3b8; }
           .cfilter button.is-active { background: #ff5f1f; color: #fff; border-color: #ff5f1f; transform: translateY(-1px); box-shadow: 0 4px 10px rgba(255, 95, 31,.25); }
+          /* 모바일: 가로 스크롤 칩 (한 줄 유지 + 스와이프, 스크롤바 숨김) */
+          @media (max-width: 640px) {
+            .cfilter { flex-wrap: nowrap; overflow-x: auto; overflow-y: hidden; padding: 2px 0 12px; scrollbar-width: none; -webkit-overflow-scrolling: touch; }
+            .cfilter::-webkit-scrollbar { display: none; }
+            .cfilter button { flex: 0 0 auto; white-space: nowrap; }
+          }
           .cgrid { display: grid; gap: 1rem; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); }
           .ccard { background: #fff; border-radius: 14px; overflow: hidden; box-shadow: 0 2px 10px rgba(0,0,0,.08); color: #0a0a0a; transition: transform .2s, box-shadow .2s; display: flex; flex-direction: column; }
           .ccard:hover { transform: translateY(-3px); box-shadow: 0 10px 28px rgba(0,0,0,.18); }
@@ -917,6 +1012,12 @@
                   });
                 });
               });
+
+              // 모바일(≤640px)에서는 기본 선택을 '이커머스'로 (전체 대신)
+              if (window.matchMedia('(max-width: 640px)').matches) {
+                var ecom = document.querySelector('[data-cfilter="ecommerce"]');
+                if (ecom) ecom.click();
+              }
             })();
           </script>
         </div>
@@ -949,7 +1050,7 @@
     <section class="section strategy" id="strategy" aria-labelledby="strategy-title">
       <div class="container">
         <div class="section__head reveal">
-          <span class="eyebrow">[ 07 / STRATEGY ]</span>
+          <span class="eyebrow">[ 08 / STRATEGY ]</span>
           <h2 class="section__title" id="strategy-title">업종별 <span class="text-gradient">광고 전략 사례</span></h2>
           <p class="section__lead">각 업종의 특성에 맞는 차별화된 전략으로 성과를 극대화합니다.</p>
         </div>
@@ -1037,7 +1138,7 @@
     <section class="section whyus" id="whyus" aria-labelledby="whyus-title">
       <div class="container">
         <div class="section__head reveal">
-          <span class="eyebrow">[ 08 / WHY US ]</span>
+          <span class="eyebrow">[ 09 / WHY US ]</span>
           <h2 class="section__title" id="whyus-title">카이앤컴퍼니를 <span class="text-gradient">선택하는 이유</span></h2>
           <p class="section__lead">광고만이 아닙니다. 데이터·자동화·실행력까지 — 한 팀에서 끝냅니다.</p>
         </div>
@@ -1083,7 +1184,7 @@
     <section class="outro" data-outro aria-label="브랜드 선언">
       <div class="container">
         <p class="outro__statement">우리는 <em>평범한 결과</em>는<br />만들지 않습니다</p>
-        <p class="outro__stack" aria-label="빠르게 키운다고 아무 광고나 집행하지 않습니다. 브랜드의 분위기와 방향을 함께 고민하며 기억에 남는 성과를 만듭니다."><span class="ch" style="animation-delay:0.00s">빠</span><span class="ch" style="animation-delay:0.04s">르</span><span class="ch" style="animation-delay:0.07s">게</span><span class="ch" aria-hidden="true" style="width:.4em"> </span><span class="ch" style="animation-delay:0.11s">키</span><span class="ch" style="animation-delay:0.14s">운</span><span class="ch" style="animation-delay:0.18s">다</span><span class="ch" style="animation-delay:0.21s">고</span><span class="ch" aria-hidden="true" style="width:.4em"> </span><span class="ch" style="animation-delay:0.25s">아</span><span class="ch" style="animation-delay:0.28s">무</span><span class="ch" aria-hidden="true" style="width:.4em"> </span><span class="ch" style="animation-delay:0.32s">광</span><span class="ch" style="animation-delay:0.35s">고</span><span class="ch" style="animation-delay:0.39s">나</span><span class="ch" aria-hidden="true" style="width:.4em"> </span><span class="ch" style="animation-delay:0.42s">집</span><span class="ch" style="animation-delay:0.46s">행</span><span class="ch" style="animation-delay:0.49s">하</span><span class="ch" style="animation-delay:0.53s">지</span><span class="ch" aria-hidden="true" style="width:.4em"> </span><span class="ch" style="animation-delay:0.56s">않</span><span class="ch" style="animation-delay:0.60s">습</span><span class="ch" style="animation-delay:0.63s">니</span><span class="ch" style="animation-delay:0.67s">다</span><span class="ch" aria-hidden="true" style="width:.4em"> </span><span class="ch" aria-hidden="true" style="width:.4em"> </span><span class="ch" style="animation-delay:0.70s">브</span><span class="ch" style="animation-delay:0.74s">랜</span><span class="ch" style="animation-delay:0.77s">드</span><span class="ch" style="animation-delay:0.81s">의</span><span class="ch" aria-hidden="true" style="width:.4em"> </span><span class="ch" style="animation-delay:0.84s">분</span><span class="ch" style="animation-delay:0.88s">위</span><span class="ch" style="animation-delay:0.91s">기</span><span class="ch" style="animation-delay:0.95s">와</span><span class="ch" aria-hidden="true" style="width:.4em"> </span><span class="ch" style="animation-delay:0.98s">방</span><span class="ch" style="animation-delay:1.02s">향</span><span class="ch" style="animation-delay:1.05s">을</span><span class="ch" aria-hidden="true" style="width:.4em"> </span><span class="ch" style="animation-delay:1.09s">함</span><span class="ch" style="animation-delay:1.12s">께</span><span class="ch" aria-hidden="true" style="width:.4em"> </span><span class="ch" style="animation-delay:1.16s">고</span><span class="ch" style="animation-delay:1.19s">민</span><span class="ch" style="animation-delay:1.23s">하</span><span class="ch" style="animation-delay:1.26s">며</span><span class="ch" aria-hidden="true" style="width:.4em"> </span><span class="ch" style="animation-delay:1.30s">기</span><span class="ch" style="animation-delay:1.33s">억</span><span class="ch" style="animation-delay:1.37s">에</span><span class="ch" aria-hidden="true" style="width:.4em"> </span><span class="ch" style="animation-delay:1.40s">남</span><span class="ch" style="animation-delay:1.44s">는</span><span class="ch" aria-hidden="true" style="width:.4em"> </span><span class="ch" style="animation-delay:1.47s">성</span><span class="ch" style="animation-delay:1.51s">과</span><span class="ch" style="animation-delay:1.54s">를</span><span class="ch" aria-hidden="true" style="width:.4em"> </span><span class="ch" style="animation-delay:1.58s">만</span><span class="ch" style="animation-delay:1.61s">듭</span><span class="ch" style="animation-delay:1.65s">니</span><span class="ch" style="animation-delay:1.68s">다</span></p>
+        <p class="outro__stack" aria-label="빠르게 키운다고 아무 광고나 집행하지 않습니다. 브랜드의 분위기와 방향을 함께 고민하며 기억에 남는 성과를 만듭니다."><span class="ch" style="animation-delay:0.00s">빠</span><span class="ch" style="animation-delay:0.04s">르</span><span class="ch" style="animation-delay:0.07s">게</span><span class="ch" aria-hidden="true" style="width:.4em"> </span><span class="ch" style="animation-delay:0.11s">키</span><span class="ch" style="animation-delay:0.14s">운</span><span class="ch" style="animation-delay:0.18s">다</span><span class="ch" style="animation-delay:0.21s">고</span><span class="ch" aria-hidden="true" style="width:.4em"> </span><span class="ch" style="animation-delay:0.25s">아</span><span class="ch" style="animation-delay:0.28s">무</span><span class="ch" aria-hidden="true" style="width:.4em"> </span><span class="ch" style="animation-delay:0.32s">광</span><span class="ch" style="animation-delay:0.35s">고</span><span class="ch" style="animation-delay:0.39s">나</span><span class="ch" aria-hidden="true" style="width:.4em"> </span><span class="ch" style="animation-delay:0.42s">집</span><span class="ch" style="animation-delay:0.46s">행</span><span class="ch" style="animation-delay:0.49s">하</span><span class="ch" style="animation-delay:0.53s">지</span><span class="ch" aria-hidden="true" style="width:.4em"> </span><span class="ch" style="animation-delay:0.56s">않</span><span class="ch" style="animation-delay:0.60s">습</span><span class="ch" style="animation-delay:0.63s">니</span><span class="ch" style="animation-delay:0.67s">다</span><span class="outro__brk" aria-hidden="true"></span><span class="ch" style="animation-delay:0.70s">브</span><span class="ch" style="animation-delay:0.74s">랜</span><span class="ch" style="animation-delay:0.77s">드</span><span class="ch" style="animation-delay:0.81s">의</span><span class="ch" aria-hidden="true" style="width:.4em"> </span><span class="ch" style="animation-delay:0.84s">분</span><span class="ch" style="animation-delay:0.88s">위</span><span class="ch" style="animation-delay:0.91s">기</span><span class="ch" style="animation-delay:0.95s">와</span><span class="ch" aria-hidden="true" style="width:.4em"> </span><span class="ch" style="animation-delay:0.98s">방</span><span class="ch" style="animation-delay:1.02s">향</span><span class="ch" style="animation-delay:1.05s">을</span><span class="ch" aria-hidden="true" style="width:.4em"> </span><span class="ch" style="animation-delay:1.09s">함</span><span class="ch" style="animation-delay:1.12s">께</span><span class="ch" aria-hidden="true" style="width:.4em"> </span><span class="ch" style="animation-delay:1.16s">고</span><span class="ch" style="animation-delay:1.19s">민</span><span class="ch" style="animation-delay:1.23s">하</span><span class="ch" style="animation-delay:1.26s">며</span><span class="ch" aria-hidden="true" style="width:.4em"> </span><span class="ch" style="animation-delay:1.30s">기</span><span class="ch" style="animation-delay:1.33s">억</span><span class="ch" style="animation-delay:1.37s">에</span><span class="ch" aria-hidden="true" style="width:.4em"> </span><span class="ch" style="animation-delay:1.40s">남</span><span class="ch" style="animation-delay:1.44s">는</span><span class="ch" aria-hidden="true" style="width:.4em"> </span><span class="ch" style="animation-delay:1.47s">성</span><span class="ch" style="animation-delay:1.51s">과</span><span class="ch" style="animation-delay:1.54s">를</span><span class="ch" aria-hidden="true" style="width:.4em"> </span><span class="ch" style="animation-delay:1.58s">만</span><span class="ch" style="animation-delay:1.61s">듭</span><span class="ch" style="animation-delay:1.65s">니</span><span class="ch" style="animation-delay:1.68s">다</span></p>
       </div>
     </section>
 
@@ -1094,7 +1195,7 @@
       <div class="container">
         <div class="contact__layout">
           <div class="contact__aside reveal">
-            <span class="eyebrow">[ 09 / CONTACT ]</span>
+            <span class="eyebrow">[ 10 / CONTACT ]</span>
             <h2 class="section__title" id="contact-title">프로젝트를 <span class="text-gradient">함께 시작</span>해요</h2>
             <p>마케팅, 쇼핑몰 개발, 디자인, 브랜딩 — 어떤 고민이든 편하게 문의 주세요. 결과로 증명하겠습니다.</p>
 
@@ -1188,11 +1289,12 @@
   </footer>
 
   <!-- 플로팅 CTA (stayweb LET'S TALK) -->
-  <a class="float-cta" href="#contact" aria-label="문의하기">
+  <a class="float-cta" href="https://open.kakao.com/me/kaicompany" target="_blank" rel="noopener noreferrer" aria-label="카카오 오픈채팅 문의하기">
     <span class="float-cta__dot" aria-hidden="true"></span> LET'S TALK
   </a>
 
   <script src="js/main.js"></script>
+  <script src="js/actions.js"></script>
   <script src="js/cursor.js"></script>
   <script type="module" src="js/hero3d.js"></script>
 </body>

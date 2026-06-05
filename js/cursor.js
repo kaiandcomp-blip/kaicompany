@@ -49,12 +49,10 @@
   dot.style.transform = `translate(${x}px, ${y}px) translate(-50%, -50%)`;
   dot.classList.add('is-visible');
 
-  // 커스텀 커서가 실제로 렌더된 것을 확인한 뒤에만 네이티브 커서를 숨김
-  // (렌더 실패 시 네이티브 커서를 그대로 두어 "포인터 사라짐" 방지)
+  // 커스텀 커서(따라다니는 원)가 렌더됐는지만 확인.
+  // ※ 네이티브 마우스 화살표는 숨기지 않는다 → 실제 커서 + 뒤따라오는 원이 함께 보임.
   requestAnimationFrame(() => {
-    if (dot.isConnected && dot.offsetWidth >= 1 && dot.offsetHeight >= 1) {
-      document.documentElement.classList.add('has-custom-cursor');
-    } else {
+    if (!(dot.isConnected && dot.offsetWidth >= 1 && dot.offsetHeight >= 1)) {
       disableCustomCursor();
     }
   });
@@ -71,17 +69,28 @@
   );
 
   // 인터랙티브 요소 호버 → 확대 (이벤트 위임)
+  // 단, 메뉴바(헤더) 안에서는 너무 커지지 않도록 작은 사이즈(is-hover-sm)로 분기
   document.addEventListener(
     'pointerover',
     (e) => {
-      if (e.target.closest && e.target.closest(HOVER_SELECTOR)) dot.classList.add('is-hover');
+      const t = e.target.closest && e.target.closest(HOVER_SELECTOR);
+      if (!t) return;
+      if (t.closest('[data-header]')) {
+        dot.classList.add('is-hover-sm');
+        dot.classList.remove('is-hover');
+      } else {
+        dot.classList.add('is-hover');
+        dot.classList.remove('is-hover-sm');
+      }
     },
     { passive: true }
   );
   document.addEventListener(
     'pointerout',
     (e) => {
-      if (e.target.closest && e.target.closest(HOVER_SELECTOR)) dot.classList.remove('is-hover');
+      if (e.target.closest && e.target.closest(HOVER_SELECTOR)) {
+        dot.classList.remove('is-hover', 'is-hover-sm');
+      }
     },
     { passive: true }
   );
@@ -107,11 +116,26 @@
     return;
   }
 
-  // lerp 부드러운 추적 (값이 작을수록 더 느리게/지연되며 따라옴)
-  const ease = 0.16;
-  function frame() {
-    x += (tx - x) * ease;
-    y += (ty - y) * ease;
+  // stayweb.dev 동일 스프링 추적 (framer-motion useSpring 재현)
+  // 원본: stiffness 300, damping 25, mass 0.5
+  // → 요청대로 "조금 천천히" 따라오게 stiffness를 낮추고 mass를 키움.
+  //   (튕김 없이 부드럽게 안착하도록 damping은 임계감쇠 이상으로 유지)
+  const STIFFNESS = 220; // 낮을수록 더 느긋하게(천천히) 따라옴
+  const DAMPING = 30;    // 높을수록 출렁임 없이 정돈됨
+  const MASS = 0.85;     // 클수록 관성이 커져 더 천천히 따라옴
+  let vx = 0;
+  let vy = 0;
+  let last = performance.now();
+  function frame(now) {
+    let dt = (now - last) / 1000;
+    last = now;
+    if (dt > 0.05) dt = 0.05; // 탭 전환 등으로 dt가 튀는 것 방지(안정성)
+    // x축 스프링 적분
+    vx += ((-STIFFNESS * (x - tx) - DAMPING * vx) / MASS) * dt;
+    x += vx * dt;
+    // y축 스프링 적분
+    vy += ((-STIFFNESS * (y - ty) - DAMPING * vy) / MASS) * dt;
+    y += vy * dt;
     dot.style.transform = `translate(${x}px, ${y}px) translate(-50%, -50%)`;
     requestAnimationFrame(frame);
   }
