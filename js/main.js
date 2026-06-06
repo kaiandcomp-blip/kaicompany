@@ -317,11 +317,14 @@
       }
 
       const formData = new FormData(form);
+      const interests = formData.getAll('interests'); // 체크박스 다중 선택값 배열
       const payload = {
         name: formData.get('name'),
         phone: formData.get('phone'),
         email: formData.get('email'),
         message: formData.get('message'),
+        interests: interests,                     // 배열 (Make에서 multi-select 매핑용)
+        interestsLabel: interests.join(', '),     // "마케팅, 디자인" 문자열 (메일 본문 가독성용)
         submittedAt: new Date().toISOString(),
         source: 'kaicompany.kr contact form'
       };

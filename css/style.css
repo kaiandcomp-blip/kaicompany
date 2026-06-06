@@ -1116,6 +1116,19 @@ ul { list-style: none; margin: 0; padding: 0; }
 .field.invalid input,
 .field.invalid textarea { border-color: var(--brand); }
 
+/* 관심영역 체크박스 그룹 (pill 스타일) */
+.field__label { font-size: 0.88rem; font-weight: 700; color: var(--color-text); display: inline-flex; align-items: center; gap: .35rem; }
+.field__hint { font-size: 0.72rem; font-weight: 500; color: var(--color-text-muted); }
+.checkbox-group { display: flex; flex-wrap: wrap; gap: .5rem; margin-top: .2rem; }
+.checkbox-pill { position: relative; display: inline-flex; align-items: center; padding: .55rem 1rem; border-radius: 999px; background: var(--color-surface-alt); border: 1.5px solid var(--color-border); cursor: pointer; transition: border-color var(--transition), background var(--transition), color var(--transition), transform .15s; user-select: none; }
+.checkbox-pill input[type="checkbox"] { position: absolute; opacity: 0; width: 0; height: 0; pointer-events: none; }
+.checkbox-pill span { font-size: .85rem; font-weight: 600; color: var(--color-text); line-height: 1; }
+.checkbox-pill:hover { border-color: rgba(255, 95, 31, 0.5); color: var(--brand); transform: translateY(-1px); }
+.checkbox-pill:has(input:checked) { background: var(--brand); border-color: var(--brand); }
+.checkbox-pill:has(input:checked) span { color: #fff; }
+.checkbox-pill:focus-within { outline: none; box-shadow: 0 0 0 4px rgba(255, 95, 31, 0.18); }
+@media (max-width: 480px) { .checkbox-pill { padding: .45rem .8rem; } .checkbox-pill span { font-size: .78rem; } }
+
 .form-note { font-size: 0.82rem; color: var(--color-text-muted); }
 .form-status {
   font-weight: 700;
