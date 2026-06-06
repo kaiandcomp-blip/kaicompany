@@ -272,7 +272,11 @@
       });
     });
 
-    form.addEventListener('submit', (e) => {
+    // 노션 DB 등록용 Webhook (Zapier/Make에서 발급. 비어 있으면 호출 생략)
+    // 예: 'https://hooks.zapier.com/hooks/catch/XXX/YYY/'
+    const NOTION_WEBHOOK_URL = form.getAttribute('data-notion-webhook') || '';
+
+    form.addEventListener('submit', async (e) => {
       e.preventDefault();
       let valid = true;
       let firstInvalid = null;
@@ -297,12 +301,73 @@
         return;
       }
 
-      // 백엔드 없음 -> 접수 안내만 표시
-      if (status) {
-        status.style.color = '#1a9e54';
-        status.textContent = '문의가 접수되었습니다. 빠르게 연락드리겠습니다!';
+      // 봇 트랩(honeypot) 검사
+      const honey = form.elements['_honey'];
+      if (honey && honey.value) return;
+
+      const submitBtn = form.querySelector('button[type="submit"]');
+      const originalBtnText = submitBtn ? submitBtn.textContent : '';
+      if (submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.textContent = '전송 중...';
       }
-      form.reset();
+      if (status) {
+        status.style.color = '#475569';
+        status.textContent = '문의를 전송하고 있습니다...';
+      }
+
+      const formData = new FormData(form);
+      const payload = {
+        name: formData.get('name'),
+        phone: formData.get('phone'),
+        email: formData.get('email'),
+        message: formData.get('message'),
+        submittedAt: new Date().toISOString(),
+        source: 'kaicompany.kr contact form'
+      };
+
+      // 1) Formsubmit (kaiandcomp@gmail.com 자동 메일 발송)
+      //    * 첫 제출 시 kaiandcomp@gmail.com 으로 "Confirm your email" 메일이 옴 → 링크 클릭 후 정식 활성화
+      //    * 응답을 콘솔에 출력하여 활성화 상태 확인 가능
+      const mailPromise = fetch(form.action, {
+        method: 'POST',
+        headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
+      }).then(async (r) => {
+        const data = await r.json().catch(() => ({}));
+        console.log('[Formsubmit response]', r.status, data);
+        if (!r.ok) throw new Error('mail send failed: ' + r.status);
+        return data;
+      });
+
+      // 2) 노션 DB 등록 (Webhook 설정된 경우만)
+      const notionPromise = NOTION_WEBHOOK_URL
+        ? fetch(NOTION_WEBHOOK_URL, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(payload)
+          }).catch((err) => { console.warn('Notion webhook failed:', err); })
+        : Promise.resolve();
+
+      try {
+        await Promise.all([mailPromise, notionPromise]);
+        if (status) {
+          status.style.color = '#1a9e54';
+          status.textContent = '문의가 정상 접수되었습니다. 빠르게 연락드리겠습니다!';
+        }
+        form.reset();
+      } catch (err) {
+        console.error('Contact form submit error:', err);
+        if (status) {
+          status.style.color = '#e23a6e';
+          status.textContent = '전송에 실패했습니다. kaiandcomp@gmail.com 으로 직접 메일 부탁드립니다.';
+        }
+      } finally {
+        if (submitBtn) {
+          submitBtn.disabled = false;
+          submitBtn.textContent = originalBtnText || '문의 보내기';
+        }
+      }
     });
   }
 

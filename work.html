@@ -37,7 +37,7 @@
         <a class="nav__link" href="index.html#about">ABOUT</a>
         <a class="nav__link" href="index.html#services">OUR SERVICE</a>
         <a class="nav__link" href="work.html">PORTFOLIO</a>
-        <a class="nav__link nav__link--cta" href="https://open.kakao.com/me/kaicompany" target="_blank" rel="noopener noreferrer">LET'S TALK</a>
+        <a class="nav__link nav__link--cta" href="https://discovered-guanaco-cb0.notion.site/377926438fe780709dd4db38a0ea8697" target="_blank" rel="noopener noreferrer">LET'S TALK</a>
       </nav>
 
       <button class="nav-toggle" data-nav-toggle aria-label="메뉴 열기/닫기"
@@ -170,64 +170,126 @@
           .mall-meta { display: flex; flex-wrap: wrap; gap: .6rem 1.6rem; margin: .8rem 0 1.4rem; font-size: .85rem; color: #475569; }
           .mall-meta strong { color: #0a0a0a; font-weight: 700; }
 
-          /* ============= 모바일 최적화 (≤ 640px) ============= */
+          /* ============= 모바일 최적화 (≤ 640px) — 페이지 길이 단축 ============= */
           @media (max-width: 640px) {
-            .brand-detail { margin-top: clamp(2rem, 5vw, 3rem); }
-            .bd-header { margin-bottom: 2rem; }
-            .bd-header__eyebrow { font-size: .7rem; padding: .35rem .8rem; }
-            .bd-header__title { font-size: 1.65rem; line-height: 1.25; }
-            .bd-header__lead { font-size: .9rem; padding: 0 .8rem; }
+            .brand-detail { margin-top: clamp(1.6rem, 4vw, 2.4rem); }
+            .bd-header { margin-bottom: 1.4rem; }
+            .bd-header__eyebrow { font-size: .68rem; padding: .3rem .75rem; margin-bottom: .7rem; }
+            .bd-header__title { font-size: 1.5rem; line-height: 1.25; margin-bottom: .55rem; }
+            .bd-header__divider { width: 44px; height: 2px; margin-bottom: .7rem; }
+            .bd-header__lead { font-size: .85rem; padding: 0 .8rem; line-height: 1.55; }
 
-            .brand-section { padding: 1.2rem; border-radius: 14px; margin-bottom: 1.2rem; }
+            .brand-section { padding: 1rem 1rem 1.1rem; border-radius: 12px; margin-bottom: .9rem; }
             .brand-section::before { width: 3px; }
-            .brand-section__head { gap: .5rem; padding-bottom: .9rem; margin-bottom: 1rem; }
-            .brand-section__head h3 { font-size: 1.15rem; }
-            .brand-section__head .tag { font-size: .72rem; padding: .25rem .6rem; }
+            .brand-section__head { gap: .45rem; padding-bottom: .7rem; margin-bottom: .85rem; }
+            .brand-section__head h3 { font-size: 1.1rem; }
+            .brand-section__head .tag { font-size: .68rem; padding: .2rem .55rem; }
 
-            .meta-campaign__title { font-size: .82rem; letter-spacing: .04em; }
-            .subcampaign__title { font-size: .85rem; padding-left: .55rem; }
+            .meta-campaign { margin-top: 1rem; }
+            .meta-campaign__title { font-size: .78rem; letter-spacing: .04em; margin-bottom: .65rem; }
+            .subcampaign { margin: .7rem 0 1.1rem; }
+            .subcampaign__title { font-size: .8rem; padding-left: .5rem; margin-bottom: .6rem; }
 
-            /* 이미지 그리드: 모바일에서 2열 고정 (가독성 우선) */
+            /* 이미지 그리드: 모바일 2열 고정 + gap 축소 */
             .img-grid--square, .img-grid--portrait, .img-grid--mixed {
               grid-template-columns: repeat(2, 1fr);
-              gap: .5rem;
+              gap: .4rem;
             }
 
-            /* 비디오 그리드: 모바일 2열 (1열은 9/16 비율이 너무 김) */
+            /* bento5: 모바일 2열로 강제 (1열 떨어짐 방지) */
+            .img-grid--bento5 {
+              grid-template-columns: repeat(2, 1fr) !important;
+              gap: .4rem;
+            }
+            .img-grid--bento5 .is-featured {
+              grid-column: span 2 !important;
+              aspect-ratio: 2/1 !important;
+              grid-row: auto !important;
+            }
+            .img-grid--bento5 .is-portrait {
+              grid-column: auto !important;
+              grid-row: auto !important;
+              aspect-ratio: 9/16 !important;
+            }
+            .img-grid--bento5 > :not(.is-featured):not(.is-portrait) {
+              aspect-ratio: 1/1 !important;
+            }
+            .img-grid--bento5 .is-featured .badge { font-size: .6rem; letter-spacing: .08em; }
+
+            /* 비디오 그리드: 가로 스크롤 캐러셀 (페이지 길이 대폭 단축) */
             .video-grid {
-              grid-template-columns: repeat(2, 1fr);
-              gap: .6rem;
+              display: flex;
+              grid-template-columns: none;
+              overflow-x: auto;
+              overflow-y: hidden;
+              scroll-snap-type: x mandatory;
+              -webkit-overflow-scrolling: touch;
+              scrollbar-width: thin;
+              gap: .55rem;
+              padding-bottom: .5rem;
+              scroll-padding-left: 0;
             }
-            .video-grid__caption { font-size: .75rem; margin-top: .3rem; }
+            .video-grid::-webkit-scrollbar { height: 4px; }
+            .video-grid::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 2px; }
+            .video-grid > div {
+              flex: 0 0 46%;
+              max-width: 46%;
+              scroll-snap-align: start;
+            }
+            .video-grid video { aspect-ratio: 9/16; border-radius: 8px; }
+            .video-grid__caption { font-size: .72rem; margin-top: .25rem; }
 
-            /* 쇼핑몰 카드: 모바일 2열 */
-            .mall-grid { grid-template-columns: repeat(2, 1fr); gap: .7rem; }
-            .mall-card__media { aspect-ratio: 5/3; padding: .5rem; }
-            .mall-card__info { padding: .7rem .8rem .85rem; }
-            .mall-card__name { font-size: .88rem; }
-            .mall-card__desc { font-size: .7rem; }
-            .mall-meta { flex-direction: column; gap: .35rem; font-size: .8rem; }
+            /* 캐러셀 힌트(미세 그라데이션) */
+            .subcampaign:has(> .video-grid) { position: relative; }
 
-            /* 더보기 토글: 풀폭 버튼 */
-            .more-videos > summary { width: 100%; justify-content: center; padding: .65rem 1rem; }
+            /* 더보기 토글: 풀폭 버튼 + 컴팩트 */
+            .more-videos { margin-top: .8rem; }
+            .more-videos > summary { width: 100%; justify-content: center; padding: .55rem 1rem; font-size: .8rem; }
 
-            /* 클라이언트 카드 (cgrid): 모바일 1열 */
-            .cgrid { grid-template-columns: 1fr; gap: .8rem; }
-            .ccard__head { padding: .85rem 1rem .95rem; }
-            .ccard__body { padding: .8rem 1rem 1rem; }
+            /* 쇼핑몰 카드: 모바일 컴팩트 가로 레이아웃 (높이 대폭 단축) */
+            .mall-grid { grid-template-columns: repeat(2, 1fr); gap: .55rem; }
+            .mall-card { flex-direction: row; align-items: stretch; border-radius: 10px; }
+            .mall-card__media { flex: 0 0 38%; aspect-ratio: 1/1; padding: .35rem; }
+            .mall-card__info { padding: .5rem .6rem .55rem; flex: 1; min-width: 0; display: flex; flex-direction: column; justify-content: center; }
+            .mall-card__tag { font-size: .6rem; padding: 1px 6px; margin-bottom: .25rem; }
+            .mall-card__name { font-size: .78rem; margin-bottom: .15rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+            .mall-card__desc { font-size: .65rem; line-height: 1.3; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+            .mall-card--placeholder .mall-card__media { font-size: .9rem !important; }
+            .mall-meta { flex-direction: column; gap: .3rem; font-size: .75rem; margin: .6rem 0 1rem; }
 
-            /* 클라이언트 필터: 가로 스크롤 허용으로 잘림 방지 */
-            .cfilter { flex-wrap: nowrap; overflow-x: auto; justify-content: flex-start; padding-bottom: .4rem; scrollbar-width: thin; -webkit-overflow-scrolling: touch; }
-            .cfilter button { flex-shrink: 0; padding: .45rem .9rem; font-size: .8rem; }
+            /* 클라이언트 카드: 모바일 2열 컴팩트 (이전 1열 → 길이 절반) */
+            .clients { margin-top: 1.8rem; }
+            .clients__head { margin-bottom: 1rem; }
+            .clients__head h3 { font-size: 1.2rem; }
+            .clients__head p { font-size: .82rem; }
+            .cgrid { grid-template-columns: repeat(2, 1fr); gap: .55rem; }
+            .ccard { border-radius: 10px; box-shadow: 0 1px 4px rgba(0,0,0,.06); }
+            .ccard__head { padding: .6rem .7rem .65rem; }
+            .ccard__name { font-size: .82rem; margin-bottom: .15rem; line-height: 1.25; }
+            .ccard__sub { font-size: .62rem; line-height: 1.3; }
+            .ccard__body { padding: .55rem .7rem .65rem; }
+            .ccard__rows { gap: .25rem; font-size: .65rem; }
+            .ccard__row { gap: .4rem; }
+            .ccard__row strong { font-size: .65rem; }
+            .ccard__footer { margin-top: .5rem; padding-top: .45rem; font-size: .62rem; gap: .3rem; line-height: 1.3; }
+            .ccard__bullet { width: 5px; height: 5px; }
+
+            /* 클라이언트 필터: 가로 스크롤 허용 */
+            .cfilter { flex-wrap: nowrap; overflow-x: auto; justify-content: flex-start; padding-bottom: .4rem; margin-bottom: 1.1rem; scrollbar-width: thin; -webkit-overflow-scrolling: touch; }
+            .cfilter button { flex-shrink: 0; padding: .4rem .85rem; font-size: .76rem; }
           }
 
           /* ============= 초소형 화면 (≤ 380px) ============= */
           @media (max-width: 380px) {
             .img-grid--square, .img-grid--portrait, .img-grid--mixed { grid-template-columns: repeat(2, 1fr); }
-            .video-grid { grid-template-columns: 1fr; }
+            .img-grid--bento5 { grid-template-columns: repeat(2, 1fr) !important; }
+            .video-grid > div { flex: 0 0 60%; max-width: 60%; }
             .mall-grid { grid-template-columns: 1fr; }
-            .mall-card__media { aspect-ratio: 2/1; }
-            .bd-header__title { font-size: 1.45rem; }
+            .mall-card__media { flex: 0 0 32%; }
+            .cgrid { grid-template-columns: repeat(2, 1fr); }
+            .ccard__name { font-size: .76rem; }
+            .ccard__rows { font-size: .6rem; }
+            .bd-header__title { font-size: 1.35rem; }
           }
         </style>
 
@@ -332,12 +394,12 @@
             </header>
             <div class="mall-meta">
               <span>플랫폼: <strong>카페24 · 플렉스게이트</strong></span>
-              <span>구축 실적: <strong>8건</strong></span>
+              <span>구축 실적: <strong>50건 이상</strong></span>
               <span>구축 기간: <strong>평균 4주</strong></span>
               <span>범위: <strong>UI/UX · 결제 · 물류 연동</strong></span>
             </div>
             <div class="subcampaign">
-              <h5 class="subcampaign__title">구축·운영 중 쇼핑몰 (8개사)</h5>
+              <h5 class="subcampaign__title">구축·운영 중 쇼핑몰 (50개사 이상 · 대표 8개 노출)</h5>
               <div class="mall-grid">
                 <a href="https://www.ksdo.co.kr/" target="_blank" rel="noopener" class="mall-card">
                   <div class="mall-card__media"><img src="assets/malls/ksdo.jpg" alt="기순도전통장 로고" loading="lazy" /></div>
@@ -347,14 +409,14 @@
                     <p class="mall-card__desc">대한민국 식품명인 제35호</p>
                   </div>
                 </a>
-                <div class="mall-card mall-card--placeholder" aria-label="독점마켓">
+                <a href="https://www.dokjeom.com/" target="_blank" rel="noopener" class="mall-card mall-card--placeholder" aria-label="독점마켓">
                   <div class="mall-card__media" style="background:linear-gradient(135deg,#ff5f1f,#e0521a);color:#fff;font-size:1.3rem;font-weight:800;letter-spacing:-.01em;">독점마켓</div>
                   <div class="mall-card__info">
                     <span class="mall-card__tag">이커머스</span>
                     <h6 class="mall-card__name">독점마켓</h6>
                     <p class="mall-card__desc">종합 이커머스 플랫폼</p>
                   </div>
-                </div>
+                </a>
                 <a href="https://www.chungdam-market.com/" target="_blank" rel="noopener" class="mall-card">
                   <div class="mall-card__media"><img src="assets/malls/chungdam.jpg" alt="청담마켓 로고" loading="lazy" /></div>
                   <div class="mall-card__info">
@@ -387,14 +449,14 @@
                     <p class="mall-card__desc">LED 인테리어 조명</p>
                   </div>
                 </a>
-                <a href="https://www.dokjeom.com/" target="_blank" rel="noopener" class="mall-card">
+                <div class="mall-card" aria-label="네놈마켓 쇼핑몰">
                   <div class="mall-card__media"><img src="assets/malls/nenom.png" alt="네놈마켓 로고" loading="lazy" /></div>
                   <div class="mall-card__info">
                     <span class="mall-card__tag">식품</span>
                     <h6 class="mall-card__name">네놈마켓 쇼핑몰</h6>
                     <p class="mall-card__desc">식품 종합 쇼핑몰</p>
                   </div>
-                </a>
+                </div>
                 <a href="https://matgwadang.co.kr/" target="_blank" rel="noopener" class="mall-card">
                   <div class="mall-card__media"><img src="assets/malls/matgwadang.jpg" alt="맛과당 로고" loading="lazy" /></div>
                   <div class="mall-card__info">
@@ -470,8 +532,8 @@
               <p>이커머스 · 식품 · 인테리어 · 글로벌 · 개발 — 카이앤컴퍼니가 함께한 100개사+</p>
             </div>
             <div class="cfilter" role="group" aria-label="클라이언트 카테고리 필터">
-              <button type="button" data-cfilter="all" class="is-active" aria-pressed="true">전체</button>
-              <button type="button" data-cfilter="ecommerce" aria-pressed="false">이커머스</button>
+              <button type="button" data-cfilter="all" aria-pressed="false">전체</button>
+              <button type="button" data-cfilter="ecommerce" class="is-active" aria-pressed="true">이커머스</button>
               <button type="button" data-cfilter="food" aria-pressed="false">식품</button>
               <button type="button" data-cfilter="interior" aria-pressed="false">인테리어</button>
               <button type="button" data-cfilter="global" aria-pressed="false">글로벌</button>
@@ -664,7 +726,7 @@
                   <p class="ccard__sub">기획 · 디자인 · 개발 원스톱 구축</p>
                 </header>
                 <div class="ccard__body">
-                  <div class="ccard__rows"><div class="ccard__row"><span>프로젝트</span><strong>쇼핑몰 기획·구축·런칭</strong></div><div class="ccard__row"><span>플랫폼</span><strong>카페24 · 플렉스게이트</strong></div><div class="ccard__row"><span>구축 실적</span><strong>청담마켓 · 기순도 외 8건</strong></div><div class="ccard__row"><span>범위</span><strong>UI/UX · 결제 · 물류 연동</strong></div></div>
+                  <div class="ccard__rows"><div class="ccard__row"><span>프로젝트</span><strong>쇼핑몰 기획·구축·런칭</strong></div><div class="ccard__row"><span>플랫폼</span><strong>카페24 · 플렉스게이트</strong></div><div class="ccard__row"><span>구축 실적</span><strong>청담마켓 · 기순도 외 50건 이상</strong></div><div class="ccard__row"><span>범위</span><strong>UI/UX · 결제 · 물류 연동</strong></div></div>
                   <div class="ccard__footer" style="color:#e0431a;"><span class="ccard__bullet" style="background:#e0431a;"></span>기획부터 런칭까지 평균 4주</div>
                 </div>
               </article>
@@ -684,6 +746,13 @@
             (function () {
               var buttons = document.querySelectorAll('[data-cfilter]');
               var cards = document.querySelectorAll('.ccard');
+              function applyFilter(f) {
+                cards.forEach(function (c) {
+                  var cats = (c.getAttribute('data-cat') || '').split(/\s+/);
+                  var show = f === 'all' || cats.indexOf(f) !== -1;
+                  c.classList.toggle('is-hidden', !show);
+                });
+              }
               buttons.forEach(function (btn) {
                 btn.addEventListener('click', function () {
                   var f = btn.getAttribute('data-cfilter');
@@ -692,13 +761,12 @@
                     b.classList.toggle('is-active', active);
                     b.setAttribute('aria-pressed', String(active));
                   });
-                  cards.forEach(function (c) {
-                    var cats = (c.getAttribute('data-cat') || '').split(/\s+/);
-                    var show = f === 'all' || cats.indexOf(f) !== -1;
-                    c.classList.toggle('is-hidden', !show);
-                  });
+                  applyFilter(f);
                 });
               });
+              // 초기 활성 필터 적용 (기본: 이커머스)
+              var initial = document.querySelector('[data-cfilter].is-active');
+              if (initial) applyFilter(initial.getAttribute('data-cfilter'));
             })();
           </script>
 
@@ -707,7 +775,7 @@
           <h2 class="section__title">다음 성공 사례는 <span class="text-gradient">당신의 브랜드</span></h2>
           <p class="section__lead">결과로 증명하는 마케팅, 카이앤컴퍼니와 시작하세요.</p>
           <p style="margin-top:1.6rem;">
-            <a class="btn btn--primary" href="https://open.kakao.com/me/kaicompany" target="_blank" rel="noopener noreferrer">프로젝트 문의하기</a>
+            <a class="btn btn--primary" href="https://discovered-guanaco-cb0.notion.site/377926438fe780709dd4db38a0ea8697" target="_blank" rel="noopener noreferrer">프로젝트 문의하기</a>
           </p>
         </div>
       </div>
@@ -749,7 +817,7 @@
   </footer>
 
   <!-- 플로팅 CTA (stayweb LET'S TALK) -->
-  <a class="float-cta" href="https://open.kakao.com/me/kaicompany" target="_blank" rel="noopener noreferrer" aria-label="카카오 오픈채팅 문의하기">
+  <a class="float-cta" href="https://discovered-guanaco-cb0.notion.site/377926438fe780709dd4db38a0ea8697" target="_blank" rel="noopener noreferrer" aria-label="프로젝트 문의 폼 작성하기">
     <span class="float-cta__dot" aria-hidden="true"></span> LET'S TALK
   </a>
 

@@ -932,6 +932,7 @@ ul { list-style: none; margin: 0; padding: 0; }
 /* ============================================================
    커스텀 커서 + 필름 그레인 (stayweb 동일)
    ============================================================ */
+/* kitt.ai.kr 디자인 참고: 투명 원 + 중앙 오렌지 점 (LET'S TALK 컬러) */
 .cursor-dot {
   position: fixed;
   top: 0;
@@ -939,21 +940,58 @@ ul { list-style: none; margin: 0; padding: 0; }
   width: 32px;
   height: 32px;
   border-radius: 50%;
-  background: #ffffff;
-  mix-blend-mode: normal;       /* difference 합성 시 사라지는 문제 → normal + 외곽선으로 항상 보이게 */
-  box-shadow: 0 0 0 1px rgba(10, 10, 10, 0.35), 0 6px 18px rgba(0, 0, 0, 0.28);
+  background: transparent;
+  border: 1.5px solid var(--brand); /* LET'S TALK 오렌지 #ff5f1f */
+  box-shadow: 0 0 0 1px rgba(255, 95, 31, 0.12);
+  mix-blend-mode: normal;
   pointer-events: none;
   z-index: 9999;
   opacity: 0;
   transition: opacity 0.25s ease,
               width 0.25s cubic-bezier(.22,.61,.36,1),
-              height 0.25s cubic-bezier(.22,.61,.36,1);
+              height 0.25s cubic-bezier(.22,.61,.36,1),
+              border-color 0.25s ease,
+              background 0.25s ease,
+              box-shadow 0.25s ease;
   will-change: transform;
 }
+/* 중앙 점 (오렌지 fill dot) */
+.cursor-dot::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--brand);
+  transform: translate(-50%, -50%);
+  transition: width 0.25s cubic-bezier(.22,.61,.36,1),
+              height 0.25s cubic-bezier(.22,.61,.36,1),
+              background 0.25s ease;
+}
 .cursor-dot.is-visible { opacity: 1; }
-.cursor-dot.is-hover { width: 56px; height: 56px; }   /* 인터랙티브 요소 위 확대 */
-.cursor-dot.is-hover-sm { width: 18px; height: 18px; } /* 메뉴바(헤더) 위 — 작게 */
-.cursor-dot.is-down  { width: 22px; height: 22px; }    /* 클릭 시 축소 */
+.cursor-dot.is-hover {
+  width: 56px; height: 56px;
+  background: rgba(255, 95, 31, 0.08);
+  border-color: var(--brand);
+  box-shadow: 0 0 0 1px rgba(255, 95, 31, 0.2), 0 4px 12px rgba(255, 95, 31, 0.18);
+} /* 인터랙티브 요소 위 — 원 확장, 점은 유지 */
+.cursor-dot.is-hover::before { width: 8px; height: 8px; }
+.cursor-dot.is-hover-sm {
+  width: 18px; height: 18px;
+  border-color: var(--brand);
+} /* 헤더 위 — 작은 원 */
+.cursor-dot.is-hover-sm::before { width: 4px; height: 4px; }
+.cursor-dot.is-down {
+  width: 22px; height: 22px;
+  background: rgba(255, 95, 31, 0.2);
+  border-color: var(--brand-dark);
+} /* 클릭 시 축소 + 짙은 오렌지 */
+.cursor-dot.is-down::before {
+  width: 5px; height: 5px;
+  background: var(--brand-dark);
+}
 
 /* JS 동작(=커서 활성) + 정밀 포인터에서만 네이티브 커서 숨김 */
 @media (pointer: fine) {
