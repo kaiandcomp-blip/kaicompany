@@ -792,6 +792,8 @@ ul { list-style: none; margin: 0; padding: 0; }
   transition: opacity 0.25s, transform 0.25s;
 }
 .work-card:hover .work-card__play { opacity: 1; transform: scale(1); }
+/* 영상(video) 카드만 ▶ 표시. 이미지/GIF(<img>) 카드는 숨김 */
+.work-card:has(.work-card__media > img) .work-card__play { display: none; }
 
 @media (max-width: 540px) {
   .work-card { aspect-ratio: 5 / 4; }
