@@ -159,8 +159,9 @@
           b.setAttribute('aria-pressed', String(active));
         });
         workCards.forEach((card) => {
-          const cat = card.getAttribute('data-category');
-          const show = filter === 'all' || cat === filter;
+          const cat = card.getAttribute('data-category') || '';
+          const cats = cat.split(/\s+/);
+          const show = filter === 'all' || cats.includes(filter);
           card.classList.toggle('is-hidden', !show);
         });
       });
