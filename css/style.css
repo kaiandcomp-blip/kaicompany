@@ -445,6 +445,8 @@ ul { list-style: none; margin: 0; padding: 0; }
 .hero-btn--light:hover { transform: translateY(-2px); background: #efefef; }
 .hero-btn--dark { background: #171717; color: #ffffff; border-color: #2a2a2a; }
 .hero-btn--dark:hover { transform: translateY(-2px); border-color: #555555; }
+.hero-btn--ghost { background: transparent; color: rgba(255,255,255,.75); border-color: rgba(255,255,255,.25); font-size: .92rem; }
+.hero-btn--ghost:hover { transform: translateY(-2px); border-color: rgba(255,255,255,.5); color: #fff; }
 
 .hero__scroll {
   position: absolute;
@@ -775,6 +777,20 @@ ul { list-style: none; margin: 0; padding: 0; }
   display: -webkit-box;
   -webkit-line-clamp: 1;
   -webkit-box-orient: vertical;
+}
+
+.work-card__roas {
+  position: absolute;
+  top: 0.7rem; left: 0.7rem;
+  background: rgba(255, 95, 31, .92);
+  color: #fff;
+  font-size: .72rem;
+  font-weight: 800;
+  letter-spacing: .04em;
+  padding: .25rem .65rem;
+  border-radius: 999px;
+  backdrop-filter: blur(6px);
+  z-index: 2;
 }
 
 .work-card__play {
