@@ -31,6 +31,34 @@
   /></noscript>
   <!-- End Meta Pixel Code -->
 
+  <!-- CAPI Event Tracking -->
+  <script>
+    // 포트폴리오 페이지 로드 시 ViewContent 이벤트 자동 발송
+    fbq('track', 'ViewContent', {
+      content_name: '포트폴리오 페이지 방문',
+      content_type: 'portfolio_list',
+      value: 0,
+      currency: 'KRW'
+    });
+
+    // 각 포트폴리오 항목 클릭 시 추가 추적
+    document.addEventListener('DOMContentLoaded', function() {
+      const portfolioItems = document.querySelectorAll('[data-work-item]');
+      portfolioItems.forEach(function(item) {
+        item.addEventListener('click', function() {
+          const projectName = item.getAttribute('data-work-item') || '포트폴리오 항목';
+          fbq('track', 'ViewContent', {
+            content_name: projectName,
+            content_type: 'portfolio_detail',
+            value: 0,
+            currency: 'KRW'
+          });
+        });
+      });
+    });
+  </script>
+  <!-- End CAPI Event Tracking -->
+
   <title>포트폴리오 | 카이앤컴퍼니 (KAI COMPANY)</title>
   <meta name="description" content="카이앤컴퍼니가 진행한 마케팅·디자인·영상 캠페인 포트폴리오. 기순도, 하모아, 미친특가, 리바스 등 결과로 증명한 프로젝트." />
   <meta name="theme-color" content="#0a0a0a" />

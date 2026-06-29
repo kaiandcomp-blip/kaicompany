@@ -31,6 +31,49 @@
   /></noscript>
   <!-- End Meta Pixel Code -->
 
+  <!-- CAPI Event Tracking -->
+  <script>
+    // Contact Event - 카카오톡 버튼 클릭
+    document.addEventListener('DOMContentLoaded', function() {
+      const kakaoLink = document.querySelector('a[href="https://open.kakao.com/me/kaicompany"]');
+      if (kakaoLink) {
+        kakaoLink.addEventListener('click', function() {
+          fbq('track', 'Contact', {
+            content_name: '카카오톡 채팅 시작',
+            value: 0,
+            currency: 'KRW'
+          });
+        });
+      }
+
+      // Lead Event - 프로젝트 문의하기 클릭
+      const inquiryBtn = document.querySelector('a[href="#contact"]');
+      if (inquiryBtn && inquiryBtn.querySelector('.hero-btn__arrow')) {
+        inquiryBtn.addEventListener('click', function() {
+          fbq('track', 'Lead', {
+            content_name: '프로젝트 문의하기',
+            value: 0,
+            currency: 'KRW'
+          });
+        });
+      }
+
+      // ViewContent Event - 포트폴리오 보기 클릭
+      const portfolioBtn = document.querySelector('a[href="#work"]');
+      if (portfolioBtn) {
+        portfolioBtn.addEventListener('click', function() {
+          fbq('track', 'ViewContent', {
+            content_name: '포트폴리오 조회',
+            content_type: 'portfolio',
+            value: 0,
+            currency: 'KRW'
+          });
+        });
+      }
+    });
+  </script>
+  <!-- End CAPI Event Tracking -->
+
   <title>카이앤컴퍼니 (KAI COMPANY) | 마케팅 컨설팅 · 종합광고대행</title>
   <meta name="description" content="카이앤컴퍼니는 퍼포먼스 마케팅, 쇼핑몰·앱 개발, 디자인, 브랜딩으로 e-Commerce 성공의 비전을 제시하는 마케팅 컨설팅 전문회사입니다." />
   <meta name="theme-color" content="#0a0a0a" />
